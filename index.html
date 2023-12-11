@@ -32,78 +32,104 @@
 				<title>Spotify</title>
 			</head>
 			<body class="bg-dark">
-				<!-- inizio sidebar -->
 				<div class="container-fluid">
 					<div class="row">
-						<nav
-							class="col-md-3 d-none d-md-block bg-black sidebar vh-100"
-						>
-							<div class="sidebar-sticky">
-								<ul class="nav flex-column">
-									<li class="nav-item">
-										<a
-											class="nav-link active text-light"
-											href="#"
-											><i
-												class="bi bi-house-door fs-3"
-											></i>
-											Home</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link text-light" href="#"
-											><i class="bi bi-search fs-3"></i>
-											Cerca</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link text-light" href="#"
-											><i
-												class="bi bi-collection fs-3"
-											></i>
-											La tua libreria</a
-										>
-									</li>
-									<li class="nav-item mt-4">
-										<a class="nav-link text-light" href="#"
-											><i
-												class="bi bi-plus-square-fill fs-3"
-											></i>
-											Crea playlist</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link text-light" href="#"
-											><i
-												class="bi bi-calendar-heart fs-3"
-											></i>
-											Brani che ti piacciono</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link text-light" href="#"
-											><i
-												class="bi bi-bookmark-check fs-3"
-											></i>
-											I tuoi episodi</a
-										>
-									</li>
-								</ul>
-								<hr class="bg-white" />
-								<div>
-									<a
-										href=""
-										class="text-white text-decoration-none"
-										><p>qua ci vanno le finte</p></a
+						<!-- inizio sidebar -->
+						<nav class="col-md-3 d-none d-md-block bg-black vh-100">
+							<ul class="nav flex-column">
+								<li class="nav-item">
+									<a class="nav-link" href="#"
+										><i
+											class="bi bi-three-dots fs-3 me-3"
+										></i>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link active" href="#"
+										><i
+											class="bi bi-house-door fs-3 me-3 me-3"
+										></i>
+										Home</a
 									>
-									<a
-										href=""
-										class="text-white text-decoration-none"
-										><p>playlist</p></a
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"
+										><i class="bi bi-search fs-3 me-3"></i>
+										Cerca</a
 									>
-								</div>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"
+										><i
+											class="bi bi-collection fs-3 me-3"
+										></i>
+										La tua libreria</a
+									>
+								</li>
+								<li class="nav-item mt-4">
+									<a class="nav-link" href="#"
+										><i
+											class="bi bi-plus-square-fill fs-3 me-3"
+										></i>
+										Crea playlist</a
+									>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"
+										><i
+											class="bi bi-calendar-heart fs-3 me-3"
+										></i>
+										Brani che ti piacciono</a
+									>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#"
+										><i
+											class="bi bi-bookmark-check fs-3 me-3"
+										></i>
+										I tuoi episodi</a
+									>
+								</li>
+							</ul>
+							<hr class="bg-white" />
+
+							<div>
+								<a href="" class="text-decoration-none"
+									><p>Ultimate Winter party</p></a
+								>
+								<a href="" class="text-decoration-none"
+									><p>Caffè del Buongiorno</p></a
+								>
+								<a href="" class="text-decoration-none"
+									><p>Japanese Lofi Chill</p></a
+								>
+								<a href="" class="text-decoration-none"
+									><p>Positive Vibes</p></a
+								>
+								<a href="" class="text-decoration-none"
+									><p>Mix Anni 2010</p></a
+								>
+								<a href="" class="text-decoration-none"
+									><p>Techno Bunker</p></a
+								>
+								<a href="" class="text-decoration-none"
+									><p>Happy Beats</p></a
+								>
+								<a href="" class="text-decoration-none"
+									><p>Dance Hits</p></a
+								>
+								<a href="" class="text-decoration-none"
+									><p>Christmas Jazz</p></a
+								>
+								<a href="" class="text-decoration-none"
+									><p>Feel Good Piano</p></a
+								>
+								<a href="" class="text-decoration-none"
+									><p>Energy Booster</p></a
+								>
 							</div>
 						</nav>
+
 						<!-- fine sidebar -->
 
 						<!-- inizio parte centrale -->
@@ -115,19 +141,8 @@
 				<!-- fine parte centrale -->
 
 				<!-- offcanvas -->
-				<div class="text-end m-3 fixed-top">
-					<button
-						class="btn btn-dark bg-black rounded-circle"
-						type="button"
-						data-bs-toggle="offcanvas"
-						data-bs-target="#offcanvasRight"
-						aria-controls="offcanvasRight"
-					>
-						<i class="bi bi-people-fill"></i>
-					</button>
-				</div>
 
-				<div class="text-end m-3 fixed-top">
+				<div class="m-3 fixed-top d-flex justify-content-end">
 					<button
 						class="btn btn-dark bg-black rounded-circle"
 						type="button"
@@ -140,7 +155,7 @@
 				</div>
 
 				<div
-					class="offcanvas show offcanvas-end bg-black text-white"
+					class="offcanvas offcanvas-end bg-black text-white"
 					tabindex="-1"
 					id="offcanvasRight"
 					aria-labelledby="offcanvasRightLabel"
@@ -154,14 +169,14 @@
 						<div>
 							<button
 								type="button"
-								class="btn text-secondary rounded-circle fs-6"
+								class="btn rounded-circle fs-6 text-secondary"
 								aria-label="add friend"
 							>
 								<i class="bi bi-person-add"></i>
 							</button>
 							<button
 								type="button"
-								class="btn text-secondary rounded-circle fs-6"
+								class="btn rounded-circle fs-6 text-secondary"
 								data-bs-dismiss="offcanvas"
 								aria-label="Close"
 							>
@@ -173,32 +188,36 @@
 						<div class="container-fluid mb-4">
 							<div class="row">
 								<div class="col-2">
-									<img
-										src="./assets/imgs/profilo/fra_lobbia.jpeg"
-										style="height: 50px"
-										alt="friend's image"
-										class="rounded-circle"
-									/>
+									<a href="#"
+										><img
+											src="./assets/imgs/profilo/fra_lobbia.jpeg"
+											alt="friend's image"
+											class="rounded-circle img-fluid"
+									/></a>
 								</div>
 								<div class="col-7 text-truncate">
-									<p class="m-0">Fra Lobbia</p>
-									<p class="m-0 text-secondary">
-										<span>Zombie</span>
-										<i class="bi bi-dot"></i>
-										<span>Cranberries</span>
-									</p>
-									<p
-										class="m-0 text-secondary fs-6 text-nowrap"
+									<a href="#"
+										><p class="m-0 fw-bold fw-bolder">
+											Fra Lobbia
+										</p></a
 									>
-										<i class="bi bi-disc"></i>
-										<span class=""
-											>No Need To Argue (The Complete
-											Sessions 1994-1995)</span
+									<p class="m-0">
+										<a href=""><span>Zombie</span></a>
+										<i class="bi bi-dot"></i>
+										<a href=""><span>Cranberries</span></a>
+									</p>
+									<p class="m-0 fs-6 text-nowrap">
+										<a href="">
+											<i class="bi bi-disc"></i>
+											<span
+												>No Need To Argue (The Complete
+												Sessions 1994-1995)</span
+											></a
 										>
 									</p>
 								</div>
 								<div class="col-3">
-									<p class="m-0 text-secondary fs-6">2 min</p>
+									<p class="m-0 fs-6 text-secondary">2 min</p>
 								</div>
 							</div>
 						</div>
@@ -206,29 +225,36 @@
 						<div class="container-fluid mb-4">
 							<div class="row">
 								<div class="col-2">
-									<img
-										src="./assets/imgs/profilo/fra_napoli.png"
-										style="height: 50px"
-										alt="friend's image"
-										class="rounded-circle"
-									/>
+									<a href="#"
+										><img
+											src="./assets/imgs/profilo/fra_napoli.png"
+											alt="friend's image"
+											class="rounded-circle img-fluid"
+									/></a>
 								</div>
 								<div class="col-7 text-truncate">
-									<p class="m-0">Fra Napoli</p>
-									<p class="m-0 text-secondary">
-										<span>Without Me</span>
-										<i class="bi bi-dot"></i>
-										<span>Eminem</span>
-									</p>
-									<p
-										class="m-0 text-secondary fs-6 text-nowrap"
+									<a href="#"
+										><p class="m-0 fw-bold fw-bolder">
+											Fra Napoli
+										</p></a
 									>
-										<i class="bi bi-disc"></i>
-										<span class="">The Eminem Show</span>
+									<p class="m-0">
+										<a href=""><span>Zombie</span></a>
+										<i class="bi bi-dot"></i>
+										<a href=""><span>Cranberries</span></a>
+									</p>
+									<p class="m-0 fs-6 text-nowrap">
+										<a href="">
+											<i class="bi bi-disc"></i>
+											<span
+												>No Need To Argue (The Complete
+												Sessions 1994-1995)</span
+											></a
+										>
 									</p>
 								</div>
 								<div class="col-3">
-									<p class="m-0 text-secondary fs-6">5 min</p>
+									<p class="m-0 fs-6 text-secondary">2 min</p>
 								</div>
 							</div>
 						</div>
@@ -236,31 +262,36 @@
 						<div class="container-fluid mb-4">
 							<div class="row">
 								<div class="col-2">
-									<img
-										src="./assets/imgs/profilo/ste.png"
-										style="height: 50px"
-										alt="friend's image"
-										class="rounded-circle"
-									/>
+									<a href="#"
+										><img
+											src="./assets/imgs/profilo/ste.png"
+											alt="friend's image"
+											class="rounded-circle img-fluid"
+									/></a>
 								</div>
 								<div class="col-7 text-truncate">
-									<p class="m-0">Stefano D'Antoni</p>
-									<p class="m-0 text-secondary">
-										<span>Without Me</span>
-										<i class="bi bi-dot"></i>
-										<span>Eminem</span>
-									</p>
-									<p
-										class="m-0 text-secondary fs-6 text-nowrap"
+									<a href="#"
+										><p class="m-0 fw-bold fw-bolder">
+											Stefano D'Antoni
+										</p></a
 									>
-										<i class="bi bi-disc"></i>
-										<span class="">The Eminem Show</span>
+									<p class="m-0">
+										<a href=""><span>Zombie</span></a>
+										<i class="bi bi-dot"></i>
+										<a href=""><span>Cranberries</span></a>
+									</p>
+									<p class="m-0 fs-6 text-nowrap">
+										<a href="">
+											<i class="bi bi-disc"></i>
+											<span
+												>No Need To Argue (The Complete
+												Sessions 1994-1995)</span
+											></a
+										>
 									</p>
 								</div>
 								<div class="col-3">
-									<p class="m-0 text-secondary fs-6">
-										14 min
-									</p>
+									<p class="m-0 fs-6 text-secondary">2 min</p>
 								</div>
 							</div>
 						</div>
@@ -268,38 +299,95 @@
 						<div class="container-fluid mb-4">
 							<div class="row">
 								<div class="col-2">
-									<img
-										src="./assets/imgs/profilo/tia.png"
-										style="height: 50px"
-										alt="friend's image"
-										class="rounded-circle"
-									/>
+									<a href="#"
+										><img
+											src="./assets/imgs/profilo/tia.png"
+											alt="friend's image"
+											class="rounded-circle img-fluid"
+									/></a>
 								</div>
 								<div class="col-7 text-truncate">
-									<p class="m-0">Mattia Lugaro</p>
-									<p class="m-0 text-secondary">
-										<span>Without Me</span>
-										<i class="bi bi-dot"></i>
-										<span>Eminem</span>
-									</p>
-									<p
-										class="m-0 text-secondary fs-6 text-nowrap"
+									<a href="#"
+										><p class="m-0 fw-bold fw-bolder">
+											Mattia Lugaro
+										</p></a
 									>
-										<i class="bi bi-disc"></i>
-										<span class="">The Eminem Show</span>
+									<p class="m-0">
+										<a href=""><span>Zombie</span></a>
+										<i class="bi bi-dot"></i>
+										<a href=""><span>Cranberries</span></a>
+									</p>
+									<p class="m-0 fs-6 text-nowrap">
+										<a href="">
+											<i class="bi bi-disc"></i>
+											<span
+												>No Need To Argue (The Complete
+												Sessions 1994-1995)</span
+											></a
+										>
 									</p>
 								</div>
 								<div class="col-3">
-									<p class="m-0 text-secondary fs-6">
-										27 min
-									</p>
+									<p class="m-0 fs-6 text-secondary">2 min</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- fine offcanvas -->
-
+				<!-- sezioni in fondo alla pagina -->
+				<div class="fixed-bottom">
+					<!-- player -->
+					<div class="bg-info px-0" id="player">
+						<div class="container-fluid p-0">
+							<ul class="nav mx-auto">
+								<li class="nav-item px-0">
+									<a class="nav-link active px-0" href="#"
+										><i class="bi bi-house-door fs-3"></i>
+										Home</a
+									>
+								</li>
+								<li class="nav-item px-0">
+									<a class="nav-link px-4" href="#"
+										><i class="bi bi-search fs-3"></i>
+										Cerca</a
+									>
+								</li>
+								<li class="nav-item px-0">
+									<a class="nav-link px-0" href="#"
+										><i class="bi bi-collection fs-3"></i>
+										La tua libreria</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- navbar per schermi piccoli -->
+					<nav class="navbar d-md-none bg-black px-0">
+						<div class="container-fluid p-0">
+							<ul class="nav mx-auto">
+								<li class="nav-item px-0">
+									<a class="nav-link active px-0" href="#"
+										><i class="bi bi-house-door fs-3"></i>
+										Home</a
+									>
+								</li>
+								<li class="nav-item px-0">
+									<a class="nav-link px-4" href="#"
+										><i class="bi bi-search fs-3"></i>
+										Cerca</a
+									>
+								</li>
+								<li class="nav-item px-0">
+									<a class="nav-link px-0" href="#"
+										><i class="bi bi-collection fs-3"></i>
+										La tua libreria</a
+									>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
 				<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 				<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

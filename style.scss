@@ -1,6 +1,25 @@
 @import "./bootstrap-overrides";
 
-sidebar {
-  resize: both;
-  overflow: auto;
+.sidebar {
+	resize: both;
+	overflow: auto;
+}
+
+a {
+	color: $secondary !important;
+	&:hover {
+		color: white !important;
+		text-decoration: none !important;
+	}
+}
+
+button:hover {
+	color: white !important;
+}
+
+nav {
+	z-index: 9998;
+}
+#player {
+	z-index: 9999;
 }
