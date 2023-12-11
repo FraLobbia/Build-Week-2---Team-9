@@ -9,6 +9,9 @@ $link-color: gray;
 $link-hover-color: white;
 $link-decoration: none;
 $link-hover-decoration: none;
+
+$gray-900: #141414;
+
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "./bootstrap/scss/variables";
 
