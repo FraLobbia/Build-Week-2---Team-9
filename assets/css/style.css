@@ -10827,4 +10827,8 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+sidebar {
+  resize: both;
+  overflow: auto;
 }/*# sourceMappingURL=style.css.map */
