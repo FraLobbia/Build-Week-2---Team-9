@@ -17,12 +17,9 @@
 		/>
 	</head>
 	<body class="bg-dark">
-		<div class="container-fluid d-flex p-0">
+		<div class="container-fluid d-flex p-0 vh-100">
 			<!-- inizio sidebar -->
-			<nav
-				class="d-none d-md-block bg-black vh-100"
-				style="min-width: 280px"
-			>
+			<nav class="d-none d-md-block bg-black" style="min-width: 280px">
 				<ul class="nav flex-column">
 					<li class="nav-item">
 						<a class="nav-link" href="#"
@@ -66,7 +63,6 @@
 					</li>
 				</ul>
 				<hr class="bg-white" />
-
 				<div class="ps-3">
 					<a href="" class="text-decoration-none"
 						><p>Ultimate Winter party</p></a
@@ -107,7 +103,7 @@
 			<!-- fine sidebar -->
 
 			<!-- inizio parte centrale -->
-			<main class="bg-dark" class="col-md-9 ml-sm-auto px-4">
+			<main class="ml-sm-auto px-4 bg-dark container-fluid">
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-12">
@@ -623,51 +619,61 @@
 		<!-- sezioni in fondo alla pagina -->
 		<div class="fixed-bottom">
 			<!-- player -->
-			<div class="container-fluid bg-info px-0" id="player">
-				<div class="container-fluid row py-2 fs-3">
-					<div class="col-4 text-start">
+			<div class="d-none d-md-block bg-black text-secondary" id="player">
+				<div class="container-fluid row p-3 fs-5 align-items-center">
+					<div
+						class="col-5 d-flex align-items-center justify-content-start text-start"
+					>
+						<img
+							src="./assets/imgs/main/image-12.jpg"
+							alt=""
+							style="height: 40px"
+						/>
+						<div class="fs-6 px-3">
+							<a href="#"
+								><p class="my-0 fw-bold text-white">
+									Fat Funny Friend
+								</p></a
+							>
+							<a href="#"><p class="my-0">Maddie Zahm</p></a>
+						</div>
 						<i class="bi bi-heart"></i>
 					</div>
-					<div class="col-4 text-center">
+					<div class="col-2 text-center px-0">
 						<i class="bi bi-shuffle"></i>
 						<i class="bi bi-skip-start-fill"></i>
-						<i class="bi bi-play-circle-fill"></i>
+						<i class="bi bi-play-circle-fill fs-2"></i>
 						<i class="bi bi-skip-end-fill"></i>
 						<i class="bi bi-repeat"></i>
 					</div>
-					<div class="col-4 text-end">
+					<div class="col-5 text-end px-0">
 						<i class="bi bi-mic-fill"></i>
 						<i class="bi bi-list"></i>
 						<i class="bi bi-speaker"></i>
 						<i class="bi bi-volume-up"></i>
+						<input type="range" id="volume" class="w-25" />
 						<i class="bi bi-arrows-angle-expand"></i>
 					</div>
 				</div>
 				<div><!-- qui va la barra di avanzamento --></div>
 			</div>
-			<!-- navbar per schermi piccoli -->
-			<nav class="navbar d-md-none bg-black px-0">
-				<div class="container-fluid p-0">
-					<ul class="nav mx-auto">
-						<li class="nav-item px-0">
-							<a class="nav-link active px-0" href="#"
-								><i class="bi bi-house-door fs-3"></i> Home</a
-							>
-						</li>
-						<li class="nav-item px-0">
-							<a class="nav-link px-4" href="#"
-								><i class="bi bi-search fs-3"></i> Cerca</a
-							>
-						</li>
-						<li class="nav-item px-0">
-							<a class="nav-link px-0" href="#"
-								><i class="bi bi-collection fs-3"></i> La tua
-								libreria</a
-							>
-						</li>
-					</ul>
+			<!-- navbar bottom per schermi piccoli -->
+			<div class="d-md-none bg-black d-flex justify-content-evenly p-4">
+				<div>
+					<a href="./index.html">
+						<i class="bi bi-house-door fs-3"> </i> Home</a
+					>
 				</div>
-			</nav>
+				<div>
+					<a href="#"><i class="bi bi-search fs-3"></i> Cerca</a>
+				</div>
+				<div>
+					<a class="" href="#"
+						><i class="bi bi-collection fs-3"></i> La tua
+						libreria</a
+					>
+				</div>
+			</div>
 		</div>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
