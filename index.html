@@ -16,21 +16,6 @@
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
 		/>
 	</head>
-	<body>
-		<!DOCTYPE html>
-		<html lang="en">
-			<head>
-				<meta charset="UTF-8" />
-				<meta
-					name="viewport"
-					content="width=device-width, initial-scale=1.0"
-				/>
-				<link
-					href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-					rel="stylesheet"
-				/>
-				<title>Spotify</title>
-			</head>
 			<body class="bg-dark">
 				<div class="container-fluid">
 					<div class="row">
@@ -338,29 +323,27 @@
 				<!-- sezioni in fondo alla pagina -->
 				<div class="fixed-bottom">
 					<!-- player -->
-					<div class="bg-info px-0" id="player">
-						<div class="container-fluid p-0">
-							<ul class="nav mx-auto">
-								<li class="nav-item px-0">
-									<a class="nav-link active px-0" href="#"
-										><i class="bi bi-house-door fs-3"></i>
-										Home</a
-									>
-								</li>
-								<li class="nav-item px-0">
-									<a class="nav-link px-4" href="#"
-										><i class="bi bi-search fs-3"></i>
-										Cerca</a
-									>
-								</li>
-								<li class="nav-item px-0">
-									<a class="nav-link px-0" href="#"
-										><i class="bi bi-collection fs-3"></i>
-										La tua libreria</a
-									>
-								</li>
-							</ul>
+					<div class="container-fluid bg-info px-0" id="player">
+						<div class="container-fluid row py-2 fs-3">
+							<div class="col-4 text-start">
+								<i class="bi bi-heart"></i>
+							</div>
+							<div class="col-4 text-center">
+								<i class="bi bi-shuffle"></i>
+								<i class="bi bi-skip-start-fill"></i>
+								<i class="bi bi-play-circle-fill"></i>
+								<i class="bi bi-skip-end-fill"></i>
+								<i class="bi bi-repeat"></i>
+							</div>
+							<div class="col-4 text-end">
+								<i class="bi bi-mic-fill"></i>
+								<i class="bi bi-list"></i>
+								<i class="bi bi-speaker"></i>
+								<i class="bi bi-volume-up"></i>
+								<i class="bi bi-arrows-angle-expand"></i>
+							</div>
 						</div>
+						<div><!-- qui va la barra di avanzamento --></div>
 					</div>
 					<!-- navbar per schermi piccoli -->
 					<nav class="navbar d-md-none bg-black px-0">

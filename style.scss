@@ -5,20 +5,20 @@
 	overflow: auto;
 }
 
-a {
-	color: $secondary !important;
-	&:hover {
-		color: white !important;
-		text-decoration: none !important;
-	}
-}
+// a {
+// 	color: $secondary !important;
+// 	&:hover {
+// 		color: white !important;
+// 		text-decoration: none !important;
+// 	}
+// }
 
 button:hover {
 	color: white !important;
 }
 
 nav {
-	z-index: 9998;
+	z-index: 999;
 }
 #player {
 	z-index: 9999;
