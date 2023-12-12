@@ -42,6 +42,7 @@ nav {
     #1db954 var(--volume-percentage, 50%),
     rgb(14, 14, 14) var(--volume-percentage, 50%)
   );
+  cursor: pointer;
 }
 
 .volume-slider::-webkit-slider-thumb {
@@ -72,4 +73,14 @@ nav {
 
 .volume-slider:hover::-moz-range-thumb {
   opacity: 1;
+}
+
+// css per pulsante play (pagina artisti, si puo riutilizzare? ingrandisce leggermente il pulsante)
+
+#play-button {
+  transition: transform ease-in-out;
+}
+
+#play-button:hover {
+  transform: scale(1.1);
 }

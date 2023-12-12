@@ -24,10 +24,10 @@ $h9-font-size: $font-size-base * 0.5 !default;
 $h10-font-size: $font-size-base * 0.25 !default;
 
 $font-sizes-new: (
-	7: $h7-font-size,
-	8: $h8-font-size,
-	9: $h9-font-size,
-	10: $h10-font-size,
+  7: $h7-font-size,
+  8: $h8-font-size,
+  9: $h9-font-size,
+  10: $h10-font-size,
 );
 
 $font-sizes: map-merge($font-sizes, $font-sizes-new);

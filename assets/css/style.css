@@ -10873,6 +10873,7 @@ nav {
 
 .volume-slider:hover {
   background: linear-gradient(to right, #1db954 0%, #1db954 var(--volume-percentage, 50%), rgb(14, 14, 14) var(--volume-percentage, 50%));
+  cursor: pointer;
 }
 
 .volume-slider::-webkit-slider-thumb {
@@ -10905,4 +10906,12 @@ nav {
 
 .volume-slider:hover::-moz-range-thumb {
   opacity: 1;
+}
+
+#play-button {
+  transition: transform ease-in-out;
+}
+
+#play-button:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=style.css.map */
