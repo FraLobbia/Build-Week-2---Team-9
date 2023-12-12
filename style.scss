@@ -33,64 +33,126 @@ nav {
 	border-radius: 5px;
 	outline: none;
 	transition: background-color 0.2s;
+
+	&:hover {
+		background: linear-gradient(
+			to right,
+			#1db954 0%,
+			#1db954 var(--volume-percentage, 50%),
+			rgb(14, 14, 14) var(--volume-percentage, 50%)
+		);
+	}
+
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background: white;
+		cursor: pointer;
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
+
+	&:hover::-webkit-slider-thumb {
+		opacity: 1;
+	}
+
+	&::-moz-range-thumb {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background: white;
+		cursor: pointer;
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
+
+	&:hover::-moz-range-thumb {
+		opacity: 1;
+	}
 }
 
-.volume-slider:hover {
+#progressBar {
+	-webkit-appearance: none;
+	width: 30%;
+	margin: 0 10px;
+	height: 6px;
 	background: linear-gradient(
 		to right,
-		#1db954 0%,
-		#1db954 var(--volume-percentage, 50%),
+		white 0%,
+		white var(--volume-percentage, 50%),
 		rgb(14, 14, 14) var(--volume-percentage, 50%)
 	);
-}
+	border-radius: 5px;
+	outline: none;
+	transition: background-color 0.2s;
 
-.volume-slider::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 15px;
-	height: 15px;
-	border-radius: 50%;
-	background: white;
-	cursor: pointer;
-	opacity: 0;
-	transition: opacity 0.2s;
-}
+	&:hover {
+		background: linear-gradient(
+			to right,
+			#1db954 0%,
+			#1db954 var(--volume-percentage, 50%),
+			rgb(14, 14, 14) var(--volume-percentage, 50%)
+		);
+	}
 
-.volume-slider:hover::-webkit-slider-thumb {
-	opacity: 1;
-}
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background: white;
+		cursor: pointer;
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
 
-.volume-slider::-moz-range-thumb {
-	width: 15px;
-	height: 15px;
-	border-radius: 50%;
-	background: white;
-	cursor: pointer;
-	opacity: 0;
-	transition: opacity 0.2s;
-}
+	&:hover::-webkit-slider-thumb {
+		opacity: 1;
+	}
 
-.volume-slider:hover::-moz-range-thumb {
-	opacity: 1;
-}
+	&::-moz-range-thumb {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background: white;
+		cursor: pointer;
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
 
+	&:hover::-moz-range-thumb {
+		opacity: 1;
+	}
+}
 // ------ buttons in position absolute
 
 #friendActivityButton {
 	right: 20px;
-	top: 20px;
+	top: 10px;
 }
 
 #usersDropdownButton {
-	right: 120px;
-	top: 20px;
+	right: 80px;
+	top: 15px;
 }
 #navigationButtons {
 	left: 20px;
-	top: 25px;
+	top: 15px;
 }
 // ---------------------------------
 
 .circle {
 	border-radius: 50%;
+}
+
+#playButton {
+	transition: 600ms;
+	&:hover {
+		transform: scale(1.2);
+		transition: 600ms;
+	}
 }
