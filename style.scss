@@ -149,10 +149,29 @@ nav {
 	border-radius: 50%;
 }
 
-#playButton {
+#playButton,
+#playButtonMini {
 	transition: 600ms;
 	&:hover {
 		transform: scale(1.2);
 		transition: 600ms;
 	}
+}
+
+#playerMini {
+	background-color: #282828;
+}
+
+@font-face {
+	font-family: "CircularStd";
+	src: url("./assets/fonts/CircularStd-Black.otf");
+}
+
+@font-face {
+	font-family: "CircularStd";
+	src: url("./assets/fonts/CircularStd-Bold.otf");
+}
+
+body {
+	font-family: "CircularStd", Arial, sans-serif;
 }
