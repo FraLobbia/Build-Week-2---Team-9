@@ -186,3 +186,13 @@ body {
 #friendsActivity > p {
 	color: var(--bs-link-color);
 }
+
+// css per pulsante play (pagina artisti, si puo riutilizzare? ingrandisce leggermente il pulsante)
+
+#play-button {
+	transition: transform ease-in-out;
+}
+
+#play-button:hover {
+	transform: scale(1.1);
+}
