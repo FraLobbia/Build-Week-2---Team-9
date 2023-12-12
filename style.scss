@@ -11,6 +11,65 @@ nav {
   z-index: 9999;
 }
 
-input[type="range"] {
-	background-color: green;
+// css per input range (volume)
+
+.volume-slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  width: 30%;
+  margin: 0 10px;
+  height: 6px;
+  background: linear-gradient(
+    to right,
+    white 0%,
+    white var(--volume-percentage, 50%),
+    rgb(14, 14, 14) var(--volume-percentage, 50%)
+  );
+  border-radius: 5px;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.volume-slider:hover {
+  background: linear-gradient(
+    to right,
+    #1db954 0%,
+    #1db954 var(--volume-percentage, 50%),
+    rgb(14, 14, 14) var(--volume-percentage, 50%)
+  );
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.volume-slider:hover::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.volume-slider:hover::-moz-range-thumb {
+  opacity: 1;
 }
