@@ -10790,4 +10790,8 @@ nav {
 
 #player {
   z-index: 9999;
+}
+
+input[type=range] {
+  background-color: green;
 }/*# sourceMappingURL=style.css.map */
