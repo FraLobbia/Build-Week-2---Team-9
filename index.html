@@ -797,26 +797,6 @@
 			});
 
 			// prova
-			const sidebar = document.getElementById("sidebar");
-			let isResizing = false;
-
-			document.addEventListener("mousedown", function (event) {
-				if (event.target.classList.contains("sidebar")) {
-					isResizing = true;
-				}
-
-				document.addEventListener("mousemove", handleMouseMove);
-				document.addEventListener("mouseup", function () {
-					isResizing = false;
-				});
-			});
-
-			function handleMouseMove(event) {
-				if (isResizing) {
-					const newWidth = event.clientX;
-					sidebar.style.width = `${newWidth}px`;
-				}
-			}
 		</script>
 	</body>
 </html>
