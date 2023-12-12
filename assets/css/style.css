@@ -10937,4 +10937,15 @@ nav {
 }
 body {
   font-family: "CircularStd", Arial, sans-serif;
+}
+
+#friendsActivity > a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--bs-link-color);
+}
+
+#friendsActivity > p {
+  color: var(--bs-link-color);
 }/*# sourceMappingURL=style.css.map */
