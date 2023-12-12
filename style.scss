@@ -1,6 +1,16 @@
 @import "./bootstrap-overrides";
 
-sidebar {
-  resize: both;
-  overflow: auto;
+button:hover {
+	color: white !important;
+}
+
+nav {
+	z-index: 999;
+}
+#player {
+	z-index: 9999;
+}
+
+input[type="range"] {
+	background-color: green;
 }
