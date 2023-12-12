@@ -14,3 +14,15 @@ nav {
 input[type="range"] {
 	background-color: green;
 }
+
+.row-cols-5>* {
+	max-width: 19%; 
+}
+
+.bg-g2d {
+	background-color: #2D2D2D;
+}
+
+.fs10 {
+	font-size: 8px;
+}
