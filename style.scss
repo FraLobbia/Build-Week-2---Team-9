@@ -196,3 +196,15 @@ body {
 #play-button:hover {
 	transform: scale(1.1);
 }
+
+.row-cols-5>* {
+	max-width: 19%; 
+}
+
+.bg-g2d {
+	background-color: #2D2D2D;
+}
+
+.fs10 {
+	font-size: 8px;
+}

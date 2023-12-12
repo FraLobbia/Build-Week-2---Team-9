@@ -151,23 +151,24 @@
 					</ul>
 				</div>
 
-				<div class="container-fluid">
+				<div class="container-fluid d-none d-sm-block">
 					<div class="row">
 						<div class="col">
-							<div class="bg-black">
+							<div class="bg-gradient">
 								<div class="row">
-									<div class="col-3">
+									<div class="col-4">
 										<div>
 											<img
 												class="my-3 ms-2 me-4 img-fluid"
 												src="./assets/imgs/main/image-2.jpg"
 												alt="foto album"
-												width="240px"
 											/>
 										</div>
 									</div>
-									<div class="col-9">
-										<div class="text-white">
+									<div class="col-8">
+										<div
+											class="text-white position-relative"
+										>
 											<p class="mb-1 mt-2">ALBUM</p>
 											<h2 class="display-4 fw-bold mb-0">
 												Titolo Canzone
@@ -195,6 +196,12 @@
 											>
 												...
 											</button>
+											<button
+												class="position-absolute top-0 end-0 text-secondary text-bg-dark border-0 rounded-5 px-2"
+											>
+												NASCONDI ANNUNCI
+												<!-- necessita di un font-size piu' piccolo -->
+											</button>
 										</div>
 									</div>
 								</div>
@@ -203,110 +210,131 @@
 					</div>
 				</div>
 
-				<div class="container-fluid">
-					<h4 class="text-white fw-bold my-3">
-						Buonasera(dinamico?)
-					</h4>
-					<div class="row">
-						<div class="col-4 pe-0">
-							<div
-								class="d-flex align-items-center bg-secondary mb-2 me-2"
-							>
-								<div>
-									<img
-										src="./assets/imgs/search/image-8.jpg"
-										alt="Immagine playlist"
-										width="80px"
-									/>
-								</div>
-								<div>
-									<p class="text-white mb-0 ms-2">
-										Beast Mode
-									</p>
-								</div>
-							</div>
-							<div
-								class="d-flex align-items-center bg-secondary mb-2 me-2"
-							>
-								<div>
-									<img
-										src="./assets/imgs/search/image-8.jpg"
-										alt="Immagine playlist"
-										width="80px"
-									/>
-								</div>
-								<div>
-									<p class="text-white mb-0 ms-2">
-										Beast Mode
-									</p>
-								</div>
-							</div>
+				<div class="container-fluid" style="box-sizing: border-box">
+					<div
+						class="d-flex justify-content-between align-items-center"
+					>
+						<div>
+							<h4 class="text-white fw-bold my-4 d-inline-block">
+								Buonasera<!-- (dinamico?) -->
+							</h4>
 						</div>
-						<div class="col-4 p-0">
-							<div
-								class="d-flex align-items-center bg-secondary mb-2 me-2"
-							>
-								<div>
-									<img
-										src="./assets/imgs/search/image-8.jpg"
-										alt="Immagine playlist"
-										width="80px"
-									/>
-								</div>
-								<div>
-									<p class="text-white mb-0 ms-2">
-										Beast Mode
-									</p>
-								</div>
-							</div>
-							<div
-								class="d-flex align-items-center bg-secondary mb-2 me-2"
-							>
-								<div>
-									<img
-										src="./assets/imgs/search/image-8.jpg"
-										alt="Immagine playlist"
-										width="80px"
-									/>
-								</div>
-								<div>
-									<p class="text-white mb-0 ms-2">
-										Beast Mode
-									</p>
-								</div>
-							</div>
+						<div class="d-sm-none">
+							<i class="bi bi-bell text-white me-3"></i>
+							<i class="bi bi-clock-history text-white me-3"></i>
+							<i class="bi bi-gear text-white"></i>
 						</div>
-						<div class="col-4 ps-0">
-							<div
-								class="d-flex align-items-center bg-secondary mb-2 me-0"
-							>
-								<div>
-									<img
-										src="./assets/imgs/search/image-8.jpg"
-										alt="Immagine playlist"
-										width="80px"
-									/>
+					</div>
+
+					<div class="container-fluid mb-4 d-sm-none">
+						<a href="#" class="text-white me-5">Musica</a>
+						<a href="#" class="text-white">Podcast e show</a>
+					</div>
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-4 ps-0 d-none d-sm-block">
+								<div
+									class="d-flex align-items-center bg-g2d mb-2 me-0 rounded-2"
+								>
+									<div>
+										<img
+											src="./assets/imgs/search/image-5.jpg"
+											alt="Immagine playlist"
+											width="80px"
+											class="img-fluid rounded-start"
+										/>
+									</div>
+									<div>
+										<p class="text-white mb-0 ms-2">
+											Latino
+										</p>
+									</div>
 								</div>
-								<div>
-									<p class="text-white mb-0 ms-2">
-										Beast Mode
-									</p>
+								<div
+									class="d-flex align-items-center bg-g2d mb-2 me-0"
+								>
+									<div>
+										<img
+											src="./assets/imgs/search/image-4.jpg"
+											alt="Immagine playlist"
+											width="80px"
+											class="img-fluid rounded-start"
+										/>
+									</div>
+									<div>
+										<p class="text-white mb-0 ms-2">Mint</p>
+									</div>
 								</div>
 							</div>
-							<div
-								class="d-flex align-items-center bg-secondary mb-2 me-0"
-							>
-								<div>
-									<img
-										src="./assets/imgs/search/image-8.jpg"
-										alt="Immagine playlist"
-										width="80px"
-									/>
+							<div class="col-4 ps-0 d-none d-sm-block">
+								<div
+									class="d-flex align-items-center bg-g2d mb-2 me-0 rounded-2"
+								>
+									<div>
+										<img
+											src="./assets/imgs/search/image-52.jpg"
+											alt="Immagine playlist"
+											width="80px"
+											class="img-fluid rounded-start"
+										/>
+									</div>
+									<div>
+										<p class="text-white mb-0 ms-2">
+											Gaming
+										</p>
+									</div>
 								</div>
-								<div>
-									<p class="text-white mb-0 ms-2">
-										Beast Mode
-									</p>
+								<div
+									class="d-flex align-items-center bg-g2d mb-2 me-0"
+								>
+									<div>
+										<img
+											src="./assets/imgs/search/image-25.jpeg"
+											alt="Immagine playlist"
+											width="80px"
+											class="img-fluid rounded-start"
+										/>
+									</div>
+									<div>
+										<p class="text-white mb-0 ms-2">
+											Out Now
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-4 ps-0 d-none d-sm-block">
+								<div
+									class="d-flex align-items-center bg-g2d mb-2 me-0 rounded-2"
+								>
+									<div>
+										<img
+											src="./assets/imgs/search/image-28.jpg"
+											alt="Immagine playlist"
+											width="80px"
+											class="img-fluid rounded-start"
+										/>
+									</div>
+									<div>
+										<p class="text-white mb-0 ms-2">Afro</p>
+									</div>
+								</div>
+								<div
+									class="d-flex align-items-center bg-g2d mb-2 me-0"
+								>
+									<div>
+										<img
+											src="./assets/imgs/search/image-27.jpg"
+											alt="Immagine playlist"
+											width="80px"
+											class="img-fluid rounded-start"
+										/>
+									</div>
+									<div>
+										<p class="text-white mb-0 ms-2">
+											Party
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -314,6 +342,235 @@
 				</div>
 
 				<div class="container-fluid">
+					<div class="row">
+						<div class="col-6 col-lg-4 pe-0 d-sm-none">
+							<div
+								class="d-flex align-items-center bg-dark mb-2 me-2 rounded-2"
+							>
+								<div>
+									<img
+										src="./assets/imgs/search/image-3.jpg"
+										alt="Immagine playlist"
+										width="80px"
+										class="img-fluid rounded-start"
+									/>
+								</div>
+								<div>
+									<p
+										class="text-white mb-0 ms-2 d-none d-sm-block"
+									>
+										Pollen
+									</p>
+								</div>
+							</div>
+							<div
+								class="d-flex align-items-center bg-dark mb-2 me-2 rounded-2"
+							>
+								<div>
+									<img
+										src="./assets/imgs/search/image-9.jpg"
+										alt="Immagine playlist"
+										width="80px"
+										class="img-fluid rounded-start"
+									/>
+								</div>
+								<div>
+									<p
+										class="text-white mb-0 ms-2 d-none d-sm-block"
+									>
+										Nija
+									</p>
+								</div>
+							</div>
+							<div
+								class="d-flex align-items-center bg-dark mb-2 me-2 d-lg-none rounded-2"
+							>
+								<div>
+									<img
+										src="./assets/imgs/search/image-12.jpg"
+										alt="Immagine playlist"
+										width="80px"
+										class="img-fluid rounded-start"
+									/>
+								</div>
+								<div>
+									<p
+										class="text-white mb-0 ms-2 d-none d-sm-block"
+									>
+										All Out
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-6 col-lg-4 p-0 d-sm-none">
+							<div
+								class="d-flex align-items-center bg-dark mb-2 me-2 rounded-2"
+							>
+								<div>
+									<img
+										src="./assets/imgs/search/image-2.jpg"
+										alt="Immagine playlist"
+										width="80px"
+										class="img-fluid rounded-start"
+									/>
+								</div>
+								<div>
+									<p
+										class="text-white mb-0 ms-2 d-none d-sm-block"
+									>
+										Dissect
+									</p>
+								</div>
+							</div>
+							<div
+								class="d-flex align-items-center bg-dark mb-2 me-2 rounded-2"
+							>
+								<div>
+									<img
+										src="./assets/imgs/search/image-26.jpg"
+										alt="Immagine playlist"
+										width="80px"
+										class="img-fluid rounded-start"
+									/>
+								</div>
+								<div>
+									<p
+										class="text-white mb-0 ms-2 d-none d-sm-block"
+									>
+										Friday
+									</p>
+								</div>
+							</div>
+							<div
+								class="d-flex align-items-center bg-dark mb-2 me-2 d-lg-none rounded-2"
+							>
+								<div>
+									<img
+										src="./assets/imgs/search/image-18.jpg"
+										alt="Immagine playlist"
+										width="80px"
+										class="img-fluid rounded-start"
+									/>
+								</div>
+								<div>
+									<p
+										class="text-white mb-0 ms-2 d-none d-sm-block"
+									>
+										Sleep
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div
+					class="container-fluid bg-gradient rounded-3 mt-3 d-sm-none"
+				>
+					<div class="row">
+						<div class="col-6 mt-2">
+							<div
+								style="width: 160px"
+								class="d-flex flex-wrap mt-2"
+							>
+								<img
+									src="./assets/imgs/search/image-30.jpg"
+									alt="copertina canzone"
+									width="80px"
+								/>
+								<img
+									src="./assets/imgs/search/image-31.jpg"
+									alt="copertina canzone"
+									width="80px"
+								/>
+								<img
+									src="./assets/imgs/search/image-32.jpg"
+									alt="copertina canzone"
+									width="80px"
+								/>
+								<img
+									src="./assets/imgs/search/image-33.jpg"
+									alt="copertina canzone"
+									width="80px"
+								/>
+							</div>
+						</div>
+						<div class="col-6 ps-4 mt-2">
+							<div>
+								<p class="text-secondary">Playlist</p>
+								<h6 class="text-white">
+									(nome della playlist)
+								</h6>
+							</div>
+						</div>
+						<div class="col-12">
+							<div
+								class="d-flex justify-content-between align-items-center my-2"
+							>
+								<div>
+									<i class="bi bi-heart text-white me-3"></i>
+									<i
+										class="bi bi-three-dots-vertical text-white"
+									></i>
+								</div>
+								<div class="d-flex align-items-center">
+									<p class="text-white mb-0 me-3">
+										(Numero) brani
+									</p>
+									<i
+										class="bi bi-play-circle-fill fs-2 text-white"
+									></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div
+					class="container-fluid bg-gradient rounded-3 mt-3 d-sm-none"
+				>
+					<div class="row">
+						<div class="col-6 mt-2">
+							<div class="d-flex flex-wrap mt-2">
+								<img
+									src="./assets/imgs/search/image-35.jpg"
+									alt="copertina canzone"
+									class="img-fluid"
+								/>
+							</div>
+						</div>
+						<div class="col-6 ps-4 mt-2">
+							<div>
+								<p class="text-secondary">Playlist</p>
+								<h6 class="text-white">
+									(nome della playlist)
+								</h6>
+							</div>
+						</div>
+						<div class="col-12">
+							<div
+								class="d-flex justify-content-between align-items-center my-2"
+							>
+								<div>
+									<i class="bi bi-heart text-white me-3"></i>
+									<i
+										class="bi bi-three-dots-vertical text-white"
+									></i>
+								</div>
+								<div class="d-flex align-items-center">
+									<p class="text-white mb-0 me-3">
+										(Numero) brani
+									</p>
+									<i
+										class="bi bi-play-circle-fill fs-2 text-white"
+									></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container-fluid d-none d-sm-block">
 					<!-- .row-cols-5>* { max-width: 19%; } classe da aggiungere per avere 5 card nella stessa fila -->
 					<div
 						class="d-flex justify-content-between align-items-center"
