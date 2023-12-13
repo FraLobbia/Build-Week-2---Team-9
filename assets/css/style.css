@@ -10842,6 +10842,18 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+@font-face {
+  font-family: "CircularStd";
+  src: url("./assets/fonts/CircularStd-Black.otf");
+}
+@font-face {
+  font-family: "CircularStd";
+  src: url("./assets/fonts/CircularStd-Bold.otf");
+}
+body {
+  font-family: "CircularStd", sans-serif;
+}
+
 button:hover {
   color: white !important;
 }
@@ -10980,14 +10992,6 @@ nav {
   background-color: #282828;
 }
 
-@font-face {
-  font-family: "CircularStd";
-  src: url("./assets/fonts/CircularStd-Black.otf");
-}
-@font-face {
-  font-family: "CircularStd";
-  src: url("./assets/fonts/CircularStd-Bold.otf");
-}
 body {
   font-family: "CircularStd", Arial, sans-serif;
 }
