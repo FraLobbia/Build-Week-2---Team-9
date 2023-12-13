@@ -31,7 +31,7 @@ const options = {
 // 		console.log(data.data[2]);
 // 	});
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 20; i++) {
   createArtist();
 }
 
@@ -58,11 +58,11 @@ function createArtist() {
       // 	console.log(brano);
       // }
       const elemento1 = document.createElement("div");
-      elemento1.className = "card bg-dark p-2 mx-1";
+      elemento1.className = "card bg-dark p-2 m-auto";
       elemento1.innerHTML = `
-    
+	  						<a href="./artist.html?id_risorsa=${id_risorsa}">	
                                 <img
-                                    src="${data.picture}"
+                                    src="${data.picture_xl}"
                                     class="card-img-top"
                                     alt="copertina album/playlist"
                                 />
@@ -70,9 +70,12 @@ function createArtist() {
                                     ${data.name}
                                 </h6>
                                 <p class="card-text text-secondary">
-                                    La playlist più calda del momento
-                                </p>      
+									Album totali ${data.nb_album}
+                                </p>
+							</a>      
             `;
       discoverOtherArtist.appendChild(elemento1);
     });
 }
+
+/////////////////////////////////////////////////////////////////////////
