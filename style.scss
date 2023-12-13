@@ -1,5 +1,19 @@
 @import "./bootstrap-overrides";
 
+@font-face {
+  font-family: "CircularStd";
+  src: url("./assets/fonts/CircularStd-Black.otf");
+}
+
+@font-face {
+  font-family: "CircularStd";
+  src: url("./assets/fonts/CircularStd-Bold.otf");
+}
+
+body {
+  font-family: "CircularStd", sans-serif;
+}
+
 button:hover {
   color: white !important;
 }
@@ -163,16 +177,6 @@ nav {
 
 #playerMini {
   background-color: #282828;
-}
-
-@font-face {
-  font-family: "CircularStd";
-  src: url("./assets/fonts/CircularStd-Black.otf");
-}
-
-@font-face {
-  font-family: "CircularStd";
-  src: url("./assets/fonts/CircularStd-Bold.otf");
 }
 
 body {
