@@ -6,15 +6,15 @@ const query = "artist";
 
 const endpoint = `search?q=${query}`;
 const id_risorsa = 412;
-const endpointArtist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id_risorsa}/top?limit=10`;
+const endpointArtist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id_risorsa}`;
 
 const url = "https://deezerdevs-deezer.p.rapidapi.com/" + endpoint;
 const options = {
-	method: "GET",
-	headers: {
-		"X-RapidAPI-Key": token,
-		"X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-	},
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": token,
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+  },
 };
 
 // fetch(url, {
@@ -34,23 +34,19 @@ const options = {
 // 	});
 
 fetch(endpointArtist, {
-	method: "GET",
-	headers: {},
+  method: "GET",
+  headers: {},
 })
-	.then((response) => {
-		if (!response.ok) console.log("errore personalizzato");
-		return response.json();
-	})
-	.then((data) => {
-		console.log(data.data);
+  .then((response) => {
+    if (!response.ok) console.log("errore personalizzato");
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
 
-		for (let i = 0; i < data.data.length; i++) {
-			const brano = data.data[i];
-			console.log(brano);
-		}
-		const elemento1 = document.createElement("div");
-		elemento1.className = "card bg-dark p-2 mx-1";
-		elemento1.innerHTML = `
+    const elemento1 = document.createElement("div");
+    elemento1.className = "card bg-dark p-2 mx-1";
+    elemento1.innerHTML = `
 
 							<img
 								src="./assets/imgs/search/image-15.jpg"
@@ -65,4 +61,4 @@ fetch(endpointArtist, {
 							</p>
 	
         `;
-	});
+  });
