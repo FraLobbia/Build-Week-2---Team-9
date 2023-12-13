@@ -1,7 +1,7 @@
 console.log(token);
 
 const discoverOtherArtist = document.getElementById("discoverOtherArtist");
-
+const discoverArtistsMobile = document.getElementById("discoverArtistsMobile");
 const query = "artist";
 
 const endpoint = `search?q=${query}`;
@@ -31,36 +31,35 @@ const options = {
 // 		console.log(data.data[2]);
 // 	});
 
-for (let i = 0; i < 20; i++) {
-  createArtist();
-}
+createArtist(5);
 
-function createArtist() {
-  const id_risorsa = Math.floor(Math.random() * 300);
-  const endpointArtist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id_risorsa}`;
+function createArtist(quantity) {
+  for (let i = 0; i < quantity; i++) {
+    const id_risorsa = Math.floor(Math.random() * 300);
+    const endpointArtist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id_risorsa}`;
 
-  fetch(endpointArtist, {
-    method: "GET",
-    headers: {},
-  })
-    .then((response) => {
-      if (!response.ok) {
-        console.log("errore personalizzato");
-        createArtist();
-      }
-      return response.json();
+    fetch(endpointArtist, {
+      method: "GET",
+      headers: {},
     })
-    .then((data) => {
-      console.log(data);
+      .then((response) => {
+        if (!response.ok) {
+          console.log("errore personalizzato");
+          createArtist(1);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
 
-      // for (let i = 0; i < data.data.length; i++) {
-      // 	const brano = data.data[i];
-      // 	console.log(brano);
-      // }
-      const elemento1 = document.createElement("div");
-      elemento1.className = "card bg-dark p-2 m-auto";
-      elemento1.innerHTML = `
-	  						<a href="./artist.html?id_risorsa=${id_risorsa}">	
+        // for (let i = 0; i < data.data.length; i++) {
+        // 	const brano = data.data[i];
+        // 	console.log(brano);
+        // }
+        const elemento = document.createElement("div");
+        elemento.className = "col-6 card bg-dark p-2 m-auto";
+        elemento.innerHTML = `
+                            <a href="./artist.html?id_risorsa=${id_risorsa}">
                                 <img
                                     src="${data.picture_xl}"
                                     class="card-img-top"
@@ -70,12 +69,14 @@ function createArtist() {
                                     ${data.name}
                                 </h6>
                                 <p class="card-text text-secondary">
-									Album totali ${data.nb_album}
-                                </p>
-							</a>      
+                                    La playlist più calda del momento
+                                </p> 
+                            </a>    
             `;
-      discoverOtherArtist.appendChild(elemento1);
-    });
+        discoverOtherArtist.appendChild(elemento);
+      })
+      .catch((error) => {});
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////
