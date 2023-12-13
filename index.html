@@ -19,6 +19,25 @@
 	<body class="bg-dark">
 		<div class="container-fluid sidebar d-flex p-0 vh-100">
 			<!-- inizio sidebar -->
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Spotify</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+		/>
+	</head>
+	<body class="bg-dark">
+		<div class="container-fluid sidebar d-flex p-0 vh-100">
+			<!-- inizio sidebar -->
 
 			<div class="d-none d-md-block" style="min-width: 280px">
 				<nav
@@ -43,21 +62,9 @@
 							>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<svg
-									data-encore-id="icon"
-									role="img"
-									aria-hidden="true"
-									viewBox="0 0 24 24"
-									class="Svg-sc-ytk21e-0 iYxpxA me-2"
-									style="width: 35px"
-								>
-									<path
-										d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z"
-										fill="#808080"
-									></path>
-								</svg>
-								La tua libreria</a
+							<a class="nav-link" href="#"
+								><i class="bi bi-collection fs-3 me-3"></i> La
+								tua libreria</a
 							>
 						</li>
 						<li class="nav-item mt-4">
@@ -610,76 +617,8 @@
 							>
 						</div>
 					</div>
-					<div class="row row-cols-5 mt-4" id="altroCheTiPiace">
-						<div class="card bg-dark p-2 mx-1">
-							<img
-								src="./assets/imgs/search/image-15.jpg"
-								class="card-img-top"
-								alt="copertina album/playlist"
-							/>
-							<h6 class="card-title text-white fw-bold mt-3 mb-2">
-								Hot Hits Italia
-							</h6>
-							<p class="card-text text-secondary">
-								La playlist più calda del momento
-							</p>
-						</div>
-
-						<div class="card bg-dark p-2 mx-1">
-							<img
-								src="./assets/imgs/search/image-15.jpg"
-								class="card-img-top"
-								alt="copertina album/playlist"
-							/>
-							<h6 class="card-title text-white fw-bold mt-3 mb-2">
-								Hot Hits Italia
-							</h6>
-							<p class="card-text text-secondary">
-								La playlist più calda del momento
-							</p>
-						</div>
-
-						<div class="card bg-dark p-2 mx-1">
-							<img
-								src="./assets/imgs/search/image-15.jpg"
-								class="card-img-top"
-								alt="copertina album/playlist"
-							/>
-							<h6 class="card-title text-white fw-bold mt-3 mb-2">
-								Hot Hits Italia
-							</h6>
-							<p class="card-text text-secondary">
-								La playlist più calda del momento
-							</p>
-						</div>
-
-						<div class="card bg-dark p-2 mx-1">
-							<img
-								src="./assets/imgs/search/image-15.jpg"
-								class="card-img-top"
-								alt="copertina album/playlist"
-							/>
-							<h6 class="card-title text-white fw-bold mt-3 mb-2">
-								Hot Hits Italia
-							</h6>
-							<p class="card-text text-secondary">
-								La playlist più calda del momento
-							</p>
-						</div>
-
-						<div class="card bg-dark p-2 mx-1">
-							<img
-								src="./assets/imgs/search/image-15.jpg"
-								class="card-img-top"
-								alt="copertina album/playlist"
-							/>
-							<h6 class="card-title text-white fw-bold mt-3 mb-2">
-								Hot Hits Italia
-							</h6>
-							<p class="card-text text-secondary">
-								La playlist più calda del momento
-							</p>
-						</div>
+					<div class="row row-cols-5 mt-4" id="discoverOtherArtist">
+						<!-- qui appendiamo gli album -->
 					</div>
 				</div>
 			</main>
@@ -1048,6 +987,8 @@
 			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
 			crossorigin="anonymous"
 		></script>
+    <script src="./js/token.js"></script>
+    <script src="./js/index.js"></script>
 		<script>
 			//js per barra volume
 			document.addEventListener("DOMContentLoaded", function () {
@@ -1075,7 +1016,5 @@
 
 			// prova
 		</script>
-		<script src="./js/token.js"></script>
-		<script src="./js/index.js"></script>
 	</body>
 </html>
