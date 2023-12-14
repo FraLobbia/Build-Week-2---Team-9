@@ -1,188 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
-</head>
+  </head>
 
-<body class="bg-black">
-
+  <body class="bg-black">
     <div class="container">
+      <h4 class="text-white mt-5 mb-4 fw-bold">Cerca</h4>
 
-        <h4 class="text-white mt-5 mb-4 fw-bold">Cerca</h4>
-
-        <form class="d-flex" role="search">
-            <input type="search" placeholder="&#xF002; Cosa vuoi ascoltare?"
-                class="form-control me-2 bg-dark text-secondary border-0 py-2" style="font-family:Arial, FontAwesome"
-                aria-label="Search" />
-        </form>
+      <form class="d-flex" role="search">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Cerca..."
+          class="form-control me-2 bg-dark text-secondary border-0 py-2"
+          style="font-family: Arial, FontAwesome"
+          aria-label="Search"
+        />
+      </form>
+      <div id="searchResults"></div>
     </div>
 
     <div class="container mt-4">
-        <div class="row">
-            <div class="col-12">
-                <div>
-                    <p class="text-white text-center">Sfoglia tutto</p>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-xl-2 pe-2">
-                <div class="rounded-2 bg-danger mb-3 position-relative overflow-hidden" style="height: 100px;">
-                    <p class="text-white p-2 m-0">Podcast</p>
-                    <img src="./assets/imgs/search/image-1.jpeg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                        class="position-absolute bottom-0 end-0 rounded-3">
-                </div>
-                <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 100px;">
-                    <p class="text-white p-2 m-0">Nuove uscite</p>
-                    <img src="./assets/imgs/search/image-26.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                        class="position-absolute bottom-0 end-0 rounded-3">
-                </div>
-                <div class="rounded-2 bg-warning mb-3 position-relative overflow-hidden" style="height: 100px;">
-                    <p class="text-white p-2 m-0">Hip Hop</p>
-                    <img src="./assets/imgs/search/image-45.png" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                        class="position-absolute bottom-0 end-0 rounded-3">
-                </div>
-                <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 100px;">
-                    <p class="text-white p-2 m-0">Latina</p>
-                    <img src="./assets/imgs/search/image-49.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                        class="position-absolute bottom-0 end-0 rounded-3">
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-xl-2 ps-2">
-                <div>
-                    <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Creato per te</p>
-                        <img src="./assets/imgs/search/image-36.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Pop</p>
-                        <img src="./assets/imgs/search/image-39.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-danger mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Dance/ <br>Elettronica</p>
-                        <img src="./assets/imgs/search/image-47.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Classidiche</p>
-                        <img src="./assets/imgs/search/image-38.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                </div>
-            </div>
-            <!-- inizio nuove categorie musica -->
-            <div class="col-6 col-sm-4 col-md-3 col-xl-2 ps-2">
-                <div>
-                    <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Creato per te</p>
-                        <img src="./assets/imgs/search/image-36.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Pop</p>
-                        <img src="./assets/imgs/search/image-39.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Dance/ <br>Elettronica</p>
-                        <img src="./assets/imgs/search/image-47.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Classidiche</p>
-                        <img src="./assets/imgs/search/image-38.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3  col-xl-2 d-sm-none d-md-block ps-2">
-                <div>
-                    <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Creato per te</p>
-                        <img src="./assets/imgs/search/image-36.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Pop</p>
-                        <img src="./assets/imgs/search/image-39.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Dance/ <br>Elettronica</p>
-                        <img src="./assets/imgs/search/image-47.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Classidiche</p>
-                        <img src="./assets/imgs/search/image-38.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                </div>
-            </div>
-            <div class="col-2 d-none d-xl-block ps-2">
-                <div>
-                    <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Creato per te</p>
-                        <img src="./assets/imgs/search/image-36.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Pop</p>
-                        <img src="./assets/imgs/search/image-39.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Dance/ <br>Elettronica</p>
-                        <img src="./assets/imgs/search/image-47.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Classidiche</p>
-                        <img src="./assets/imgs/search/image-38.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                </div>
-            </div>
-            <div class="col-2 d-none d-xl-block ps-2">
-                <div>
-                    <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Creato per te</p>
-                        <img src="./assets/imgs/search/image-36.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Pop</p>
-                        <img src="./assets/imgs/search/image-39.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Dance/ <br>Elettronica</p>
-                        <img src="./assets/imgs/search/image-47.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                    <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 100px;">
-                        <p class="text-white p-2 m-0">Classidiche</p>
-                        <img src="./assets/imgs/search/image-38.jpg" alt="copertina album" style="width: 60px; rotate: 30deg;"
-                            class="position-absolute bottom-0 end-0 rounded-3">
-                    </div>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <div>
+            <p class="text-white text-center">Sfoglia tutto</p>
+          </div>
         </div>
+        <div class="col-6 col-sm-4 col-md-3 col-xl-2 pe-2">
+          <div class="rounded-2 bg-danger mb-3 position-relative overflow-hidden" style="height: 100px">
+            <p class="text-white p-2 m-0">Podcast</p>
+            <img
+              src="./assets/imgs/search/image-1.jpeg"
+              alt="copertina album"
+              style="width: 60px; rotate: 30deg"
+              class="position-absolute bottom-0 end-0 rounded-3"
+            />
+          </div>
+          <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 100px">
+            <p class="text-white p-2 m-0">Nuove uscite</p>
+            <img
+              src="./assets/imgs/search/image-26.jpg"
+              alt="copertina album"
+              style="width: 60px; rotate: 30deg"
+              class="position-absolute bottom-0 end-0 rounded-3"
+            />
+          </div>
+          <div class="rounded-2 bg-warning mb-3 position-relative overflow-hidden" style="height: 100px">
+            <p class="text-white p-2 m-0">Hip Hop</p>
+            <img
+              src="./assets/imgs/search/image-45.png"
+              alt="copertina album"
+              style="width: 60px; rotate: 30deg"
+              class="position-absolute bottom-0 end-0 rounded-3"
+            />
+          </div>
+          <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 100px">
+            <p class="text-white p-2 m-0">Latina</p>
+            <img
+              src="./assets/imgs/search/image-49.jpg"
+              alt="copertina album"
+              style="width: 60px; rotate: 30deg"
+              class="position-absolute bottom-0 end-0 rounded-3"
+            />
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-xl-2 ps-2">
+          <div>
+            <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Creato per te</p>
+              <img
+                src="./assets/imgs/search/image-36.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Pop</p>
+              <img
+                src="./assets/imgs/search/image-39.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-danger mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Dance/ <br />Elettronica</p>
+              <img
+                src="./assets/imgs/search/image-47.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Classidiche</p>
+              <img
+                src="./assets/imgs/search/image-38.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- inizio nuove categorie musica -->
+        <div class="col-6 col-sm-4 col-md-3 col-xl-2 ps-2">
+          <div>
+            <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Creato per te</p>
+              <img
+                src="./assets/imgs/search/image-36.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Pop</p>
+              <img
+                src="./assets/imgs/search/image-39.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Dance/ <br />Elettronica</p>
+              <img
+                src="./assets/imgs/search/image-47.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Classidiche</p>
+              <img
+                src="./assets/imgs/search/image-38.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-xl-2 d-sm-none d-md-block ps-2">
+          <div>
+            <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Creato per te</p>
+              <img
+                src="./assets/imgs/search/image-36.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Pop</p>
+              <img
+                src="./assets/imgs/search/image-39.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Dance/ <br />Elettronica</p>
+              <img
+                src="./assets/imgs/search/image-47.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Classidiche</p>
+              <img
+                src="./assets/imgs/search/image-38.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-2 d-none d-xl-block ps-2">
+          <div>
+            <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Creato per te</p>
+              <img
+                src="./assets/imgs/search/image-36.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Pop</p>
+              <img
+                src="./assets/imgs/search/image-39.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Dance/ <br />Elettronica</p>
+              <img
+                src="./assets/imgs/search/image-47.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Classidiche</p>
+              <img
+                src="./assets/imgs/search/image-38.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-2 d-none d-xl-block ps-2">
+          <div>
+            <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Creato per te</p>
+              <img
+                src="./assets/imgs/search/image-36.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Pop</p>
+              <img
+                src="./assets/imgs/search/image-39.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Dance/ <br />Elettronica</p>
+              <img
+                src="./assets/imgs/search/image-47.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+            <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 100px">
+              <p class="text-white p-2 m-0">Classidiche</p>
+              <img
+                src="./assets/imgs/search/image-38.jpg"
+                alt="copertina album"
+                style="width: 60px; rotate: 30deg"
+                class="position-absolute bottom-0 end-0 rounded-3"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/token.js"></script>
+    <script src="js/search.js"></script>
+  </body>
 </html>

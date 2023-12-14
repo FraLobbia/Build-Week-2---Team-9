@@ -91,7 +91,6 @@ function createAlbum(quantity) {
       },
     })
       .then((response) => {
-        console.log(response);
         if (!response.ok) {
           createAlbum(1);
           throw response.status;
@@ -106,7 +105,7 @@ function createAlbum(quantity) {
         elemento.innerHTML = `
                         <a href="./artist.html?albumCasuale=${albumCasuale}">
                             <img
-                                src="${album.artist.picture_xl}"                               }"
+                                src="${album.artist.picture_xl}"}"
                                 class="card-img-top"
                                 alt="copertina album/playlist"
                             />
