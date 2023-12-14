@@ -1,5 +1,5 @@
-const id_artista = new URLSearchParams(window.location.search).get("id_artista");
-const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id_artista}/top?limit=50`;
+const albumCasuale = new URLSearchParams(window.location.search).get("albumCasuale");
+const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${albumCasuale}/top?limit=50`;
 
 const fetchData = () => {
   fetch(url + id_artista)
