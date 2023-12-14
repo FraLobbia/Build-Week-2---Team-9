@@ -34,6 +34,7 @@ const options = {
 createArtist(5);
 
 function createArtist(quantity) {
+<<<<<<< Updated upstream
   for (let i = 0; i < quantity; i++) {
     const id_artista = Math.floor(Math.random() * 300);
     const endpointArtist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id_artista}`;
@@ -57,6 +58,31 @@ function createArtist(quantity) {
         elemento.className = "col-6 card bg-dark p-2 m-auto";
         elemento.innerHTML = `
                             <a href="./artist.html?id_artista=${id_artista}">
+=======
+	for (let i = 0; i < quantity; i++) {
+		const id_artist = Math.floor(Math.random() * 300);
+		const endpointArtist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id_artist}`;
+
+		fetch(endpointArtist)
+			.then((response) => {
+				if (!response.ok) {
+					console.log("errore personalizzato");
+					createArtist(1);
+				}
+				return response.json();
+			})
+			.then((data) => {
+				console.log(data);
+
+				// for (let i = 0; i < data.data.length; i++) {
+				// 	const brano = data.data[i];
+				// 	console.log(brano);
+				// }
+				const elemento = document.createElement("div");
+				elemento.className = "col-6 card bg-dark p-2 m-auto";
+				elemento.innerHTML = `
+                            <a href="./artist.html?id_artist=${id_artist}">
+>>>>>>> Stashed changes
                                 <img
                                     src="${data.picture_xl}"
                                     class="card-img-top"
