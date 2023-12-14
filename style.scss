@@ -255,6 +255,11 @@ body {
 
 // sezione per card quadrate
 
-.card{
-	aspect-ratio: 1/1;
+.card {
+  aspect-ratio: 1/1;
+}
+
+#main-content,
+#tracksContainer {
+  padding-bottom: 135px;
 }

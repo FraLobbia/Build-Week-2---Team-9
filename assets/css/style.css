@@ -11042,4 +11042,13 @@ body {
 }
 .track-row .track-index .play-button {
   display: none;
+}
+
+.card {
+  aspect-ratio: 1/1;
+}
+
+#main-content,
+#tracksContainer {
+  padding-bottom: 135px;
 }/*# sourceMappingURL=style.css.map */

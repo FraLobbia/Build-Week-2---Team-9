@@ -1,51 +1,83 @@
-// const albumCasuale = new URLSearchParams(window.location.search).get("albumCasuale");
-// const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${albumCasuale}/top?limit=50`;
+const urlParams = new URLSearchParams(window.location.search);
+const artistId = urlParams.get("artistId");
+const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`;
+const options = {
+  method: "GET",
+  headers: {},
+};
 
-// const fetchData = () => {
-//   fetch(url + id_artista)
-//     .then((response) => {
-//       if (!response.ok) {
-//         console.log("errore personalizzato");
-//         createArtist(1);
-//       }
-//       return response.json();
-//     })
-//     .then((tracks) => {
-//       console.log(tracks);
-//       const albumContainer = document.getElementById("albumContainer");
-//       tracks.data.forEach((data) => {
-//         const artistAlbum = document.createElement("div");
-//         artistAlbum.className = "row ms-1 align-items-center mb-3";
-
-//         artistAlbum.innerHTML = `
-//         <div class="col-sm-12 col-md-7 col-lg-6 d-flex align-items-center fs-5">
-//         <span class="text-muted me-2">2</span>
-//         <img src="${data.album.cover_xl}" style="height: 60px" class="mx-2" />
-//         <span
-//           >${data.album.title}<br />
-//           <p class="mb-0 text-muted d-block d-md-none">98.839.244</p></span
-//         >
-//         <a href="" class="d-block d-md-none ms-auto"
-//           ><i class="bi bi-three-dots-vertical text-secondary fs-3"></i
-//         ></a>
-//       </div>
-//       <div class="col-md-2 col-lg-3 text-center">
-//         <p class="mb-0 text-muted d-none d-md-block">98.839.244</p>
-//       </div>
-//       <div class="col-md-3 col-lg-3 text-end d-none d-lg-inline-block">
-//         <p class="mb-0 text-muted">4:17</p>
-//       </div>
-//         `;
-//         albumContainer.appendChild(artistAlbum);
-
-//         console.log(data.album);
-//       });
-//     });
-// };
-
-// fetchData();
+// funz per caricare dati artista
 
 function loadArtistDetails() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const artistId = urlParams.get("artistId");
+  if (!artistId) {
+    console.error("ID artista mancante");
+    return;
+  }
+
+  fetch(url, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Errore nella risposta della rete");
+      }
+      return response.json();
+    })
+    .then((artistDetails) => {
+      document.getElementById("artistName").textContent = artistDetails.name;
+      document.getElementById("artistName2").textContent = artistDetails.name;
+      document.getElementById("artistName3").textContent = artistDetails.name;
+      document.getElementById("numFan").textContent = artistDetails.nb_fan.toLocaleString() + " ascoltatori mensili";
+      document.getElementById("artistImg").src = artistDetails.picture;
+      document.getElementById("artistImg2").src = artistDetails.picture;
+    });
 }
+
+// funz per caricare dati canzoni piu ascoltate
+
+function loadTop5Songs() {
+  fetch(url + "/top?limit=50", options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Errore nella risposta della rete");
+      }
+      return response.json();
+    })
+    .then((tracks) => {
+      console.log(tracks);
+      const albumContainer = document.getElementById("albumContainer");
+      const sortedTracks = tracks.data.sort((a, b) => b.rank - a.rank);
+      const top5Tracks = sortedTracks.slice(0, 5);
+
+      top5Tracks.forEach((data, index) => {
+        const artistAlbum = document.createElement("div");
+        artistAlbum.className = "row ms-1 align-items-center mb-2 track-row py-2";
+
+        artistAlbum.innerHTML = `
+        <div class="col-sm-12 col-md-7 col-lg-6 d-flex align-items-center fs-5 track-index">
+          <span class="text-muted me-2 index-number">${index + 1}</span>
+          <button class="btn play-button mt-1 fs-6 text-white"><i class="bi bi-play-fill" style="margin-left: -15px"></i></button>
+          <img src="${data.album.cover_xl}" style="height: 60px" class="mx-2" />
+          <span class="fs-6">
+            ${data.album.title}<br />
+            <p class="mb-0 text-muted d-block d-md-none">${data.rank.toLocaleString()}</p>
+          </span>
+          <a href="" class="d-block d-md-none ms-auto">
+            <i class="bi bi-three-dots-vertical text-secondary fs-3"></i>
+          </a>
+        </div>
+        <div class="col-md-2 col-lg-3 text-center">
+          <p class="mb-0 text-muted d-none d-md-block">${data.rank.toLocaleString()}</p>
+        </div>
+        <div class="col-md-3 col-lg-3 text-end d-none d-lg-inline-block">
+          <p class="mb-0 text-muted">${new Date(data.duration * 1000).toISOString().substr(14, 5)}</p>
+        </div>
+      `;
+        albumContainer.appendChild(artistAlbum);
+      });
+    })
+    .catch((error) => {
+      console.error("Si è verificato un errore:", error);
+    });
+}
+
+loadTop5Songs();
+loadArtistDetails();
