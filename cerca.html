@@ -22,12 +22,14 @@
       <form class="d-flex" role="search">
         <input
           type="search"
-          placeholder="&#xF002; Cosa vuoi ascoltare?"
+          id="searchInput"
+          placeholder="Cerca..."
           class="form-control me-2 bg-dark text-secondary border-0 py-2"
           style="font-family: Arial, FontAwesome"
           aria-label="Search"
         />
       </form>
+      <div id="searchResults"></div>
     </div>
 
     <div class="container mt-4">
@@ -41,22 +43,22 @@
             <div class="col-6 col-sm-4 col-md-3 col-xl-2 pe-2">
                 <div> 
                     <div class="rounded-2 bg-danger mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0 position-absolute top-0 start-0">Podcast</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Podcast</p>
                         <img src="./assets/imgs/search/image-1.jpeg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Nuove uscite</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Nuove uscite</p>
                         <img src="./assets/imgs/search/image-26.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-warning mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Hip Hop</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Hip Hop</p>
                         <img src="./assets/imgs/search/image-45.png" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Latina</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Latina</p>
                         <img src="./assets/imgs/search/image-49.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
@@ -65,22 +67,22 @@
             <div class="col-6 col-sm-4 col-md-3 col-xl-2 ps-2">
                 <div>
                     <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Creato per te</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Creato per te</p>
                         <img src="./assets/imgs/search/image-36.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Pop</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Pop</p>
                         <img src="./assets/imgs/search/image-39.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-danger mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Dance/ <br>Elettronica</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Dance/ <br>Elettronica</p>
                         <img src="./assets/imgs/search/image-47.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Classidiche</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Classidiche</p>
                         <img src="./assets/imgs/search/image-38.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
@@ -90,22 +92,22 @@
             <div class="col-6 col-sm-4 col-md-3 col-xl-2 ps-2">
                 <div>
                     <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Creato per te</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Creato per te</p>
                         <img src="./assets/imgs/search/image-36.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Pop</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Pop</p>
                         <img src="./assets/imgs/search/image-39.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Dance/ <br>Elettronica</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Dance/ <br>Elettronica</p>
                         <img src="./assets/imgs/search/image-47.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Classidiche</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Classidiche</p>
                         <img src="./assets/imgs/search/image-38.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
@@ -114,22 +116,22 @@
             <div class="col-6 col-md-3 col-xl-2 d-sm-none d-md-block ps-2">
                 <div>
                     <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Creato per te</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Creato per te</p>
                         <img src="./assets/imgs/search/image-36.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Pop</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Pop</p>
                         <img src="./assets/imgs/search/image-39.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Dance/ <br>Elettronica</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Dance/ <br>Elettronica</p>
                         <img src="./assets/imgs/search/image-47.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Classidiche</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Classidiche</p>
                         <img src="./assets/imgs/search/image-38.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
@@ -138,22 +140,22 @@
             <div class="col-2 d-none d-xl-block ps-2">
                 <div>
                     <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Creato per te</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Creato per te</p>
                         <img src="./assets/imgs/search/image-36.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Pop</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Pop</p>
                         <img src="./assets/imgs/search/image-39.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Dance/ <br>Elettronica</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Dance/ <br>Elettronica</p>
                         <img src="./assets/imgs/search/image-47.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Classidiche</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Classidiche</p>
                         <img src="./assets/imgs/search/image-38.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
@@ -162,22 +164,22 @@
             <div class="col-2 d-none d-xl-block ps-2">
                 <div>
                     <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Creato per te</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Creato per te</p>
                         <img src="./assets/imgs/search/image-36.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-success mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Pop</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Pop</p>
                         <img src="./assets/imgs/search/image-39.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-primary mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Dance/ <br>Elettronica</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Dance/ <br>Elettronica</p>
                         <img src="./assets/imgs/search/image-47.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
                     <div class="rounded-2 bg-info mb-3 position-relative overflow-hidden" style="height: 160px;">
-                        <p class="text-white p-2 m-0">Classidiche</p>
+                        <p class="text-white p-2 m-0 position-absolute top-0 start-0 fw-bold fs-5">Classidiche</p>
                         <img src="./assets/imgs/search/image-38.jpg" alt="copertina album"
                             style="width: 60px; rotate: 30deg;" class="position-absolute bottom-0 end-0 rounded-3">
                     </div>
@@ -431,5 +433,7 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script src="js/token.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>
