@@ -8,11 +8,11 @@ const endpoint = `search?q=${query}`;
 
 const url = "https://deezerdevs-deezer.p.rapidapi.com/" + endpoint;
 const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": token,
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-  },
+	method: "GET",
+	headers: {
+		"X-RapidAPI-Key": token,
+		"X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+	},
 };
 
 // fetch(url, {
@@ -34,55 +34,33 @@ const options = {
 createArtist(5);
 
 function createArtist(quantity) {
-<<<<<<< Updated upstream
-  for (let i = 0; i < quantity; i++) {
-    const id_artista = Math.floor(Math.random() * 300);
-    const endpointArtist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id_artista}`;
-
-    fetch(endpointArtist)
-      .then((response) => {
-        if (!response.ok) {
-          console.log("errore personalizzato");
-          createArtist(1);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-
-        // for (let i = 0; i < data.data.length; i++) {
-        // 	const brano = data.data[i];
-        // 	console.log(brano);
-        // }
-        const elemento = document.createElement("div");
-        elemento.className = "col-6 card bg-dark p-2 m-auto";
-        elemento.innerHTML = `
-                            <a href="./artist.html?id_artista=${id_artista}">
-=======
 	for (let i = 0; i < quantity; i++) {
-		const id_artist = Math.floor(Math.random() * 300);
-		const endpointArtist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id_artist}`;
+		const albumCasuale =
+			Math.floor(Math.random() * (75000 - 10000 + 1)) + 10000;
+		const endpointAlbum = `https://deezerdevs-deezer.p.rapidapi.com/album/${albumCasuale}`;
 
-		fetch(endpointArtist)
+		fetch(endpointAlbum, {
+			method: "GET",
+			headers: {
+				"X-RapidAPI-Key": token,
+				"X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+			},
+		})
 			.then((response) => {
+				console.log(response);
 				if (!response.ok) {
-					console.log("errore personalizzato");
-					createArtist(1);
+					createAlbum(1);
+					throw response.status;
 				}
 				return response.json();
 			})
-			.then((data) => {
-				console.log(data);
+			.then((album) => {
+				console.log(album);
 
-				// for (let i = 0; i < data.data.length; i++) {
-				// 	const brano = data.data[i];
-				// 	console.log(brano);
-				// }
 				const elemento = document.createElement("div");
 				elemento.className = "col-6 card bg-dark p-2 m-auto";
 				elemento.innerHTML = `
-                            <a href="./artist.html?id_artist=${id_artist}">
->>>>>>> Stashed changes
+                            <a href="./artist.html?id_artista=${id_artista}">
                                 <img
                                     src="${data.picture_xl}"
                                     class="card-img-top"
@@ -96,10 +74,43 @@ function createArtist(quantity) {
                                 </p> 
                             </a>    
             `;
-        discoverOtherArtist.appendChild(elemento);
-      })
-      .catch((error) => {});
-  }
+				discoverOtherArtist.appendChild(elemento);
+			})
+			.catch((errorCode) => {
+				switch (errorCode) {
+					case 404:
+						message =
+							"🤬🤬🤬🤬 Risorsa non trovata. Codice errore: ";
+						console.log(message + errorCode);
+						break;
+					case 401:
+						message =
+							"🤬🤬🤬🤬 Non sei autorizzato. Codice errore: ";
+						console.log(message + errorCode);
+						break;
+					case 418:
+						message = "🤬🤬🤬🤬 I'm a teapot. Codice errore: ";
+						console.log(message + errorCode);
+						break;
+					case 429:
+						message = "🤬🤬🤬🤬 Troppe richieste: ";
+						console.log(message + errorCode);
+						break;
+					case 500:
+						message = "🤬🤬🤬🤬 Errore del server: ";
+						console.log(message + errorCode);
+						break;
+					case 800:
+						message = "🤬🤬🤬🤬 Non ci sono dati!!!: ";
+						console.log(message + errorCode);
+						break;
+					default:
+						message =
+							"🤬🤬🤬🤬 Errore con codice non definito Codice errore: ";
+						console.log(message + errorCode);
+						createAlbum(1);
+						break;
+				}
+			});
+	}
 }
-
-/////////////////////////////////////////////////////////////////////////

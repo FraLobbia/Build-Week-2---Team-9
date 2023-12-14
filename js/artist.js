@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 const id_artista = new URLSearchParams(window.location.search).get("id_artista");
 const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id_artista}/top?limit=50`;
 
