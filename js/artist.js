@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 const id_artista = new URLSearchParams(window.location.search).get("id_artista");
 const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id_artista}/top?limit=50`;
 
@@ -44,3 +45,53 @@ const fetchData = () => {
 };
 
 fetchData();
+=======
+// const id_artist = new URLSearchParams(window.location.search).get("id_artist");
+const id_artist = 412;
+const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id_artist}/top?limit=50`;
+
+const options = {
+	method: "GET",
+	headers: {
+		"X-RapidAPI-Key": token,
+		"X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+	},
+};
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+const fetchTracks = () => {
+	fetch(url + id_artist)
+		.then((response) => {
+			if (!response.ok) {
+				console.log("errore personalizzato");
+			}
+			return response.json();
+		})
+		.then((tracks) => {
+			// console.log(tracks);
+			tracks.data.forEach((track) => {});
+			// console.log(tracks.data[1]);
+			// console.log(tracks.data[2]);
+		});
+};
+fetchTracks();
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+const url2 = "https://deezerdevs-deezer.p.rapidapi.com/album/75621062";
+const fetchAlbums = () => {
+	fetch(url2, options)
+		.then((response) => {
+			if (!response.ok) {
+				console.log(response);
+			}
+			return response.json();
+		})
+		.then((tracks) => {
+			console.log(tracks);
+			tracks.data.forEach((track) => {});
+			console.log(tracks.data[1]);
+			console.log(tracks.data[2]);
+		});
+};
+
+fetchAlbums();
+>>>>>>> Stashed changes
