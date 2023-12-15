@@ -1,7 +1,11 @@
-function loadAlbumDetails() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const albumId = urlParams.get("albumId");
+const urlParams = new URLSearchParams(window.location.search);
+const albumId = urlParams.get("albumId");
+const audio = document.getElementById("myAudio");
+const dataPlayer = document.getElementById("dataPlayer");
+const dataPlayerMini = document.getElementById("playerMiniData");
+const allPlayButtons = document.getElementsByClassName("playButtonClass");
 
+function loadAlbumDetails() {
   if (!albumId) {
     console.error("ID dell'album mancante");
     return;
@@ -34,6 +38,7 @@ function loadAlbumDetails() {
       document.getElementById("year").textContent = new Date(albumDetails.release_date).getFullYear();
       document.getElementById("numOfSongs").textContent = `${albumDetails.tracks.data.length} brani  —`;
       document.getElementById("durationOfTrackList").textContent = formatAlbumDuration(albumDetails.tracks.data);
+      pickColor(albumDetails);
 
       const tracksHtml = albumDetails.tracks.data
         .map(
@@ -43,7 +48,7 @@ function loadAlbumDetails() {
                               <div class="col-1 d-none d-sm-block">
                                 <div class="d-flex align-items-center track-index">
                                   <p class="text-white me-3 mt-3 mb-0 index-number">${index + 1}</p>
-                                  <button class="btn play-button mt-1 fs-5 text-white"><i class="bi bi-play-fill" style="margin-left: -15px"></i></button>
+                                  <button class="btn play-button fs-2 text-white playButtonClass" onclick=""><i class="bi bi-play-circle-fill fs-2"></i></button>
                                 </div>
                               </div>
                               <div class="col-11 col-sm-4 ps-0">
@@ -75,11 +80,29 @@ function loadAlbumDetails() {
         .join("");
 
       document.getElementById("tracksContainer").innerHTML = tracksHtml;
+
+      const playButtons = document.getElementsByClassName("playButtonClass");
+      for (let i = 0; i < playButtons.length; i++) {
+        let trackData = albumDetails.tracks.data[i];
+        playButtons[i].addEventListener("click", () => {
+          if (audio.src !== trackData.preview) {
+            riempiDataPlayer(trackData);
+          } else {
+            togglePlayPause();
+          }
+        });
+      }
+
+      // Carica i dettagli della prima canzone nel mini player se ci sono tracce
+      if (albumDetails.tracks.data.length > 0) {
+        riempiDataPlayer(albumDetails.tracks.data[0]);
+      }
     })
     .catch((error) => {
       console.error("Errore durante la fetch:", error);
     });
 }
+
 function formatAlbumDuration(tracks) {
   const totalSeconds = tracks.reduce((acc, track) => acc + track.duration, 0);
   const hours = Math.floor(totalSeconds / 3600);
@@ -98,32 +121,112 @@ loadAlbumDetails();
 
 //////////////////////////////////////////////////////////////
 
-function applyGradient(imgElement) {
-  try {
-    const colorThief = new ColorThief();
-    const dominantColor = colorThief.getColor(imgElement);
+function riempiDataPlayer(data) {
+  const previewAudioLink = data.preview;
+  audio.src = data.preview;
 
-    const rgbToHex = (r, g, b) =>
-      "#" +
-      [r, g, b]
-        .map((x) => {
-          const hex = x.toString(16);
-          return hex.length === 1 ? "0" + hex : hex;
-        })
-        .join("");
+  // vado a predisporre l'audio da riprodurre
+  audio.innerHTML = `<source id="audioSource" src="${previewAudioLink}" type="audio/mp3" />`;
 
-    const dominantHex = rgbToHex(...dominantColor);
-
-    // Sostituisci con un altro colore per completare il gradiente, se necessario
-    const secondaryColor = "#FFFFFF";
-
-    const gradientElement = document.getElementById("albumGradient");
-    gradientElement.style.backgroundImage = `linear-gradient(to right, ${dominantHex}, ${secondaryColor})`;
-  } catch (error) {
-    console.error("Non è possibile estrarre il colore: ", error);
+  // vado a riempire il player con i dati del'artista, titolo track e copertina album
+  dataPlayer.innerHTML = ""; // prima lo svuoto dal riempimento fatto alla prima apertura della pagina
+  dataPlayer.innerHTML = `
+        
+                <img
+                    src="${data.album.cover_small}"
+                    alt=""
+                    style="height: 40px"
+                />
+                <div class="fs-6 px-3">
+                    <a href="#"
+                        ><p class="my-0 fw-bold text-white">
+                            ${data.title_short}
+                        </p></a
+                    >
+                    <a href="#"
+                        ><p class="my-0">${data.artist.name}</p></a
+                    >
+                </div>
+                <button
+                    type="button"
+                    class="btn text-secondary p-0"
+                >
+                    <i class="bi bi-heart"></i>
+                </button>
+    `;
+  dataPlayerMini.innerHTML = ""; // prima lo svuoto dal riempimento fatto alla prima apertura della pagina
+  dataPlayerMini.innerHTML = `
+        
+    <div class="col-7 d-flex">
+    <div class="fs-6 pe-3">
+        <a href="#"
+            ><p class="my-0 fw-bold text-white">
+            ${data.title_short}
+            </p></a
+        >
+        <a href="#"><p class="my-0">${data.artist.name}</p></a>
+    </div>
+    `;
+  for (const button of allPlayButtons) {
+    button.addEventListener("click", togglePlayPause);
   }
 }
 
-// Assicurati che l'immagine sia caricata prima di applicare il gradiente
-const albumCoverImg = document.getElementById("albumCover");
-albumCoverImg.onload = () => applyGradient(albumCoverImg);
+// gestisco il comportamento in base allo stato della riproduzione
+function togglePlayPause() {
+  if (audio.paused) {
+    audio.play();
+    switchIconaPlayPause("pause");
+  } else {
+    audio.pause();
+    switchIconaPlayPause("play");
+  }
+}
+
+function switchIconaPlayPause(status) {
+  for (const button of allPlayButtons) {
+    if (button.getAttribute("id") === "playButtonHeroSection") {
+      button.innerHTML = `<i class="bi bi-${status}-circle-fill fs-2 me-2"></i> <span>${status}</span>`;
+    } else {
+      button.innerHTML = `<i class="bi bi-${status}-circle-fill fs-2 text-white me-2"></i>`;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////
+
+const pickColor = (track) => {
+  const colorThief = new ColorThief();
+
+  const imageUrl = track.cover_medium;
+
+  const img = new Image();
+  img.crossOrigin = "Anonymous";
+  img.addEventListener("load", async function () {
+    try {
+      const dominantColor = await colorThief.getColor(img);
+
+      console.log("Colore Dominante:", dominantColor);
+
+      createGradient(dominantColor);
+    } catch (error) {
+      console.error("Errore durante l'estrazione del colore:", error);
+    }
+  });
+
+  img.src = imageUrl;
+};
+
+function createGradient(dominantColor) {
+  const rgbaColor = `rgba(${dominantColor.join(", ")})`;
+
+  const gradient = document.getElementById("albumGradient");
+  gradient.style.background = `linear-gradient(
+    180deg,
+    ${rgbaColor} 25%,
+    rgba(0, 0, 0, 1) 100%
+  )`;
+
+  const gradient2 = document.getElementById("albumWrapper");
+  gradient2.style.backgroundColor = `${rgbaColor}`;
+}
