@@ -1,11 +1,11 @@
-function loadAlbumDetails() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const albumId = urlParams.get("albumId");
-  const audio = document.getElementById("myAudio");
-  const dataPlayer = document.getElementById("dataPlayer");
-  const dataPlayerMini = document.getElementById("playerMiniData");
-  const allPlayButtons = document.getElementsByClassName("playButtonClass");
+const urlParams = new URLSearchParams(window.location.search);
+const albumId = urlParams.get("albumId");
+const audio = document.getElementById("myAudio");
+const dataPlayer = document.getElementById("dataPlayer");
+const dataPlayerMini = document.getElementById("playerMiniData");
+const allPlayButtons = document.getElementsByClassName("playButtonClass");
 
+function loadAlbumDetails() {
   if (!albumId) {
     console.error("ID dell'album mancante");
     return;
@@ -80,11 +80,29 @@ function loadAlbumDetails() {
         .join("");
 
       document.getElementById("tracksContainer").innerHTML = tracksHtml;
+
+      const playButtons = document.getElementsByClassName("playButtonClass");
+      for (let i = 0; i < playButtons.length; i++) {
+        let trackData = albumDetails.tracks.data[i];
+        playButtons[i].addEventListener("click", () => {
+          if (audio.src !== trackData.preview) {
+            riempiDataPlayer(trackData);
+          } else {
+            togglePlayPause();
+          }
+        });
+      }
+
+      // Carica i dettagli della prima canzone nel mini player se ci sono tracce
+      if (albumDetails.tracks.data.length > 0) {
+        riempiDataPlayer(albumDetails.tracks.data[0]);
+      }
     })
     .catch((error) => {
       console.error("Errore durante la fetch:", error);
     });
 }
+
 function formatAlbumDuration(tracks) {
   const totalSeconds = tracks.reduce((acc, track) => acc + track.duration, 0);
   const hours = Math.floor(totalSeconds / 3600);
@@ -102,6 +120,78 @@ function formatTrackDuration(durationInSeconds) {
 loadAlbumDetails();
 
 //////////////////////////////////////////////////////////////
+
+function riempiDataPlayer(data) {
+  const previewAudioLink = data.preview;
+  audio.src = data.preview;
+
+  // vado a predisporre l'audio da riprodurre
+  audio.innerHTML = `<source id="audioSource" src="${previewAudioLink}" type="audio/mp3" />`;
+
+  // vado a riempire il player con i dati del'artista, titolo track e copertina album
+  dataPlayer.innerHTML = ""; // prima lo svuoto dal riempimento fatto alla prima apertura della pagina
+  dataPlayer.innerHTML = `
+        
+                <img
+                    src="${data.album.cover_small}"
+                    alt=""
+                    style="height: 40px"
+                />
+                <div class="fs-6 px-3">
+                    <a href="#"
+                        ><p class="my-0 fw-bold text-white">
+                            ${data.title_short}
+                        </p></a
+                    >
+                    <a href="#"
+                        ><p class="my-0">${data.artist.name}</p></a
+                    >
+                </div>
+                <button
+                    type="button"
+                    class="btn text-secondary p-0"
+                >
+                    <i class="bi bi-heart"></i>
+                </button>
+    `;
+  dataPlayerMini.innerHTML = ""; // prima lo svuoto dal riempimento fatto alla prima apertura della pagina
+  dataPlayerMini.innerHTML = `
+        
+    <div class="col-7 d-flex">
+    <div class="fs-6 pe-3">
+        <a href="#"
+            ><p class="my-0 fw-bold text-white">
+            ${data.title_short}
+            </p></a
+        >
+        <a href="#"><p class="my-0">${data.artist.name}</p></a>
+    </div>
+    `;
+  for (const button of allPlayButtons) {
+    button.addEventListener("click", togglePlayPause);
+  }
+}
+
+// gestisco il comportamento in base allo stato della riproduzione
+function togglePlayPause() {
+  if (audio.paused) {
+    audio.play();
+    switchIconaPlayPause("pause");
+  } else {
+    audio.pause();
+    switchIconaPlayPause("play");
+  }
+}
+
+function switchIconaPlayPause(status) {
+  for (const button of allPlayButtons) {
+    if (button.getAttribute("id") === "playButtonHeroSection") {
+      button.innerHTML = `<i class="bi bi-${status}-circle-fill fs-2 me-2"></i> <span>${status}</span>`;
+    } else {
+      button.innerHTML = `<i class="bi bi-${status}-circle-fill fs-2 text-white me-2"></i>`;
+    }
+  }
+}
 
 //////////////////////////////////////////////////////////////
 
