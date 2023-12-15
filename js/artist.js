@@ -79,15 +79,14 @@ function loadTop5Songs() {
         const playButton = artistAlbum.querySelector(".play-button");
         playButton.addEventListener("click", () => {
           if (audio.src !== data.preview) {
-            riempiDataPlayer(data); // Cambia la canzone
+            riempiDataPlayer(data);
           } else {
-            togglePlayPause(); // Altrimenti, semplicemente riproduce o mette in pausa
+            togglePlayPause();
           }
         });
         albumContainer.appendChild(artistAlbum);
       });
 
-      // Imposta i dettagli della prima canzone nel mini player e nell'audio
       if (top5Tracks.length > 0) {
         riempiDataPlayer(top5Tracks[0]);
       }

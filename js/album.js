@@ -1,6 +1,10 @@
 function loadAlbumDetails() {
   const urlParams = new URLSearchParams(window.location.search);
   const albumId = urlParams.get("albumId");
+  const audio = document.getElementById("myAudio");
+  const dataPlayer = document.getElementById("dataPlayer");
+  const dataPlayerMini = document.getElementById("playerMiniData");
+  const allPlayButtons = document.getElementsByClassName("playButtonClass");
 
   if (!albumId) {
     console.error("ID dell'album mancante");
@@ -44,7 +48,7 @@ function loadAlbumDetails() {
                               <div class="col-1 d-none d-sm-block">
                                 <div class="d-flex align-items-center track-index">
                                   <p class="text-white me-3 mt-3 mb-0 index-number">${index + 1}</p>
-                                  <button class="btn play-button mt-1 fs-5 text-white"><i class="bi bi-play-fill" style="margin-left: -15px"></i></button>
+                                  <button class="btn play-button fs-2 text-white playButtonClass" onclick=""><i class="bi bi-play-circle-fill fs-2"></i></button>
                                 </div>
                               </div>
                               <div class="col-11 col-sm-4 ps-0">
@@ -96,6 +100,8 @@ function formatTrackDuration(durationInSeconds) {
 }
 
 loadAlbumDetails();
+
+//////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////
 
