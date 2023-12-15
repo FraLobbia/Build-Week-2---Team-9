@@ -34,6 +34,7 @@ function loadAlbumDetails() {
       document.getElementById("year").textContent = new Date(albumDetails.release_date).getFullYear();
       document.getElementById("numOfSongs").textContent = `${albumDetails.tracks.data.length} brani  —`;
       document.getElementById("durationOfTrackList").textContent = formatAlbumDuration(albumDetails.tracks.data);
+      pickColor(albumDetails);
 
       const tracksHtml = albumDetails.tracks.data
         .map(
@@ -98,32 +99,38 @@ loadAlbumDetails();
 
 //////////////////////////////////////////////////////////////
 
-function applyGradient(imgElement) {
-  try {
-    const colorThief = new ColorThief();
-    const dominantColor = colorThief.getColor(imgElement);
+const pickColor = (track) => {
+  const colorThief = new ColorThief();
 
-    const rgbToHex = (r, g, b) =>
-      "#" +
-      [r, g, b]
-        .map((x) => {
-          const hex = x.toString(16);
-          return hex.length === 1 ? "0" + hex : hex;
-        })
-        .join("");
+  const imageUrl = track.cover_medium;
 
-    const dominantHex = rgbToHex(...dominantColor);
+  const img = new Image();
+  img.crossOrigin = "Anonymous";
+  img.addEventListener("load", async function () {
+    try {
+      const dominantColor = await colorThief.getColor(img);
 
-    // Sostituisci con un altro colore per completare il gradiente, se necessario
-    const secondaryColor = "#FFFFFF";
+      console.log("Colore Dominante:", dominantColor);
 
-    const gradientElement = document.getElementById("albumGradient");
-    gradientElement.style.backgroundImage = `linear-gradient(to right, ${dominantHex}, ${secondaryColor})`;
-  } catch (error) {
-    console.error("Non è possibile estrarre il colore: ", error);
-  }
+      createGradient(dominantColor);
+    } catch (error) {
+      console.error("Errore durante l'estrazione del colore:", error);
+    }
+  });
+
+  img.src = imageUrl;
+};
+
+function createGradient(dominantColor) {
+  const rgbaColor = `rgba(${dominantColor.join(", ")})`;
+
+  const gradient = document.getElementById("albumGradient");
+  gradient.style.background = `linear-gradient(
+    180deg,
+    ${rgbaColor} 25%,
+    rgba(0, 0, 0, 1) 100%
+  )`;
+
+  const gradient2 = document.getElementById("albumWrapper");
+  gradient2.style.backgroundColor = `${rgbaColor}`;
 }
-
-// Assicurati che l'immagine sia caricata prima di applicare il gradiente
-const albumCoverImg = document.getElementById("albumCover");
-albumCoverImg.onload = () => applyGradient(albumCoverImg);

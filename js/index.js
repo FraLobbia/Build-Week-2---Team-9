@@ -50,11 +50,11 @@ function createAlbum(quantity) {
         console.log(album);
         fillHeroSection(album);
         const elemento = document.createElement("div");
-        elemento.className = "col-6 card bg-g2d p-2 m-auto mb-3";
-        elemento.style.setProperty("max-width", "17%", "important");
-        elemento.style.setProperty("height", "230px", "important");
+        elemento.className = "card bg-g2d p-2 m-auto mb-3";
+        // elemento.style.setProperty("max-width", "17%", "important");
+        // elemento.style.setProperty("height", "230px", "important");
         elemento.innerHTML = `
-                        <a href="./artist.html?albumId=${albumID}">
+                        <a href="./artist.html?artistiId=${album.artist.id}">
                             <img
                                 src="${album.artist.picture_xl}"              
                                 class="card-img-top"
