@@ -11015,10 +11015,6 @@ body {
   font-size: 8px;
 }
 
-.row-cols-5 > div {
-  max-width: 18%;
-}
-
 .track-row {
   border-radius: 10px;
   transition: background-color 0.1s;

@@ -95,3 +95,35 @@ function formatTrackDuration(durationInSeconds) {
 }
 
 loadAlbumDetails();
+
+//////////////////////////////////////////////////////////////
+
+function applyGradient(imgElement) {
+  try {
+    const colorThief = new ColorThief();
+    const dominantColor = colorThief.getColor(imgElement);
+
+    const rgbToHex = (r, g, b) =>
+      "#" +
+      [r, g, b]
+        .map((x) => {
+          const hex = x.toString(16);
+          return hex.length === 1 ? "0" + hex : hex;
+        })
+        .join("");
+
+    const dominantHex = rgbToHex(...dominantColor);
+
+    // Sostituisci con un altro colore per completare il gradiente, se necessario
+    const secondaryColor = "#FFFFFF";
+
+    const gradientElement = document.getElementById("albumGradient");
+    gradientElement.style.backgroundImage = `linear-gradient(to right, ${dominantHex}, ${secondaryColor})`;
+  } catch (error) {
+    console.error("Non è possibile estrarre il colore: ", error);
+  }
+}
+
+// Assicurati che l'immagine sia caricata prima di applicare il gradiente
+const albumCoverImg = document.getElementById("albumCover");
+albumCoverImg.onload = () => applyGradient(albumCoverImg);
