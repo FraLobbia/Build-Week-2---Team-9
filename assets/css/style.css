@@ -11015,10 +11015,6 @@ body {
   font-size: 8px;
 }
 
-.row-cols-5 > div {
-  max-width: 18%;
-}
-
 .track-row {
   border-radius: 10px;
   transition: background-color 0.1s;
@@ -11042,4 +11038,13 @@ body {
 }
 .track-row .track-index .play-button {
   display: none;
+}
+
+.card {
+  aspect-ratio: 1/1;
+}
+
+#main-content,
+#tracksContainer {
+  padding-bottom: 135px;
 }/*# sourceMappingURL=style.css.map */
