@@ -138,14 +138,16 @@
 
         <div class="container-fluid p-0">
           <div class="row position-relative">
-            <div class="col-12 p-0">
+            <div class="col-12 p-0 w-100">
               <img
-                src="https://images.squarespace-cdn.com/content/v1/633ca5b0779be916e13bb32c/6f14852e-8e26-4da6-a9f7-9d631e5ace4c/Yellowcard-band-concert-events-tickets.jpg"
+                src=""
                 alt=""
                 class="w-100"
+                id="artistBackground"
+                style="object-fit: cover; background-size: cover; background-position: center; max-height: 350px"
               />
               <div class="position-absolute bottom-0 start-0 p-3 text-white">
-                <p class="mb-0 d-none d-md-block">
+                <p class="mb-0 d-none d-md-block mb-2">
                   <i class="bi bi-patch-check-fill text-primary"></i>
                   Artista verificato
                 </p>
@@ -365,7 +367,7 @@
       <!-- navbar player - gruppo SX -->
       <div class="container-fluid d-none d-md-block bg-black text-secondary pe-4" id="player">
         <div class="row py-3 fs-5 align-items-center">
-          <div class="col-4 d-flex align-items-center justify-content-start text-start">
+          <div id="dataPlayer" class="col-4 d-flex align-items-center justify-content-start text-start">
             <img src="./assets/imgs/main/image-12.jpg" alt="" style="height: 40px" />
             <div class="fs-6 px-3">
               <a href="#"><p class="my-0 fw-bold text-white">Fat Funny Friend</p></a>
@@ -385,7 +387,7 @@
               <button type="button" class="btn text-secondary p-0">
                 <i class="bi bi-skip-start-fill fs-4 me-2"></i>
               </button>
-              <button id="playButton" type="button" class="btn text-secondary p-0">
+              <button id="playButton" type="button" class="btn text-secondary p-0 playButtonClass">
                 <i class="bi bi-play-circle-fill fs-1 me-2 text-white"></i>
               </button>
               <button type="button" class="btn text-secondary p-0">
@@ -426,7 +428,7 @@
       <!-- navbar player schermi piccoli --->
 
       <div id="playerMini" class="d-md-none py-3 mx-1 fs-8 rounded-3 row">
-        <div class="col-7 d-flex">
+        <div id="playerMiniData" class="col-7 d-flex">
           <div class="fs-6 pe-3">
             <a href="#"><p class="my-0 fw-bold text-white">Fat Funny Friend</p></a>
             <a href="#"><p class="my-0">Maddie Zahm</p></a>
@@ -462,6 +464,9 @@
         </div>
       </div>
     </div>
+    <audio id="myAudio">
+      <!-- <source id="audioSource" src="https://cdns-preview-8.dzcdn.net/stream/c-89dffbddf9f3f2a501d4760ea8215419-3.mp3" type="audio/mp3" /> -->
+    </audio>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
